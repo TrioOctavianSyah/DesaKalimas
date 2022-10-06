@@ -20,7 +20,9 @@ class UserSeeder extends Seeder
             'username' => 'desakalimas',
             'password' => Hash::make('desakalimas2022'),
             'nama' => 'Desa Kalimas',
-            'profile_pic' => 'untan.png',
+            'profile_pic' => 'untan.png', //letak gambar
+
+
 
         ]);
     }
