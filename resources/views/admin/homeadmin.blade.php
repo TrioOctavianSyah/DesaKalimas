@@ -241,9 +241,7 @@
                     </div>
                     <div class="card-body">
                         <div id="map"></div>
-                        <button id='locate'>
-                            <i class="fas fa-crosshairs"></i>
-                        </button>
+
                     </div>
                 </div>
             </div>
