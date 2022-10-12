@@ -23,7 +23,7 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <img src="{{ asset('img/Lambang_Kabupaten_Kubu_Raya.png') }}" alt="Lambang_Kabupaten_Kubu_Raya.png"
+                <img src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <br>
                 <a href="../../index2.html" class="h1"><b>Sistem Informasi</b> Potensi Desa Kalimas</a>
