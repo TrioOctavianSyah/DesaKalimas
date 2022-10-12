@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SIG Desa | Log in </title>
+    <title>Sistem Informasi | Potensi Desa Kalimas </title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
+     <link rel="shortcut icon" href="{{{ asset('img/favicon.ico') }}}">
 </head>
 
 <body class="hold-transition login-page">
@@ -22,14 +23,14 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <img src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
+                <img src="{{ asset('img/Lambang_Kabupaten_Kubu_Raya.png') }}" alt="Lambang_Kabupaten_Kubu_Raya.png"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <br>
                 <a href="../../index2.html" class="h1"><b>Sistem Informasi</b> Potensi Desa Kalimas</a>
                 <small class="d-block">v 1.0.0</small>
             </div>
             <div class="card-body">
-                <p class="login-box-msg">Sign in to Admin Dashboard</p>
+                <p class="login-box-msg">Login ke Admin Dashboard</p>
 
                 <form method="POST" enctype="multipart/form-data" action="../login/submit">
                     @csrf
@@ -61,7 +62,7 @@
                         <!-- /.col -->
                         <div class="col-4">
                             <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-sign-in-alt"></i>
-                                Sign In</button>
+                                Login</button>
                         </div>
                         <!-- /.col -->
                     </div>
