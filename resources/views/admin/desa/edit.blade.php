@@ -13,7 +13,7 @@
     <style>
         #map {
             height: 730px;
-        }
+        }        
     </style>
     <link rel="stylesheet" href="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.css" />
 @endsection
