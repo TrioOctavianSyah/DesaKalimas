@@ -11,7 +11,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">SIG Potensi Desa</a>
+      <a class="navbar-brand" href="/">Sistem Informasi Geografi Potensi Desa</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

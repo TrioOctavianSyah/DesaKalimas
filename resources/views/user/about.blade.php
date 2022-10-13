@@ -5,7 +5,7 @@
             <div class="container">
                 <img style="display: block;margin-left: auto;margin-right: auto;width: 20%;border:solid #000 3px;"
                     src="{{ asset('img/untan.png') }}" class="mb-3" id="propic">
-                <h1 align="center"><b>SIG Potensi Desa</b></h1>
+                <h1 align="center"><b>Sistem Informasi Geografi Potensi Desa</b></h1>
                 <h5 align="center">v 1.0.0</h5>
                 <p align="center">
                     Developed by Universitas Tanjungpura.
