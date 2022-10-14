@@ -25,7 +25,12 @@ use App\Http\Controllers\admin\AuthController;
 
 
 Route::get('/', [DashboardController::class, 'dashboard']);
+Route::get('/', [DashboardController::class, 'home']);
+Route::get('/profiledesa', [DashboardController::class, 'profiledesa']);
+Route::get('/pemerintahan', [DashboardController::class, 'pemerintahan']);
+Route::get('/peta', [DashboardController::class, 'peta']);
 Route::get('/about', [DashboardController::class, 'about']);
+Route::get('/contactus', [DashboardController::class, 'contactus']);
 Route::get('/login','admin\AuthController@loginpage')->name('user-login');
 Route::post('/login/submit','admin\AuthController@login')->name('user-login-submit');
 Route::get('/loadDataDesa/{id}', [DashboardController::class, 'loadDataDesa']);

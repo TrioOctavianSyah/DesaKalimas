@@ -30,7 +30,7 @@
                 <small class="d-block">v 1.0.0</small>
             </div>
             <div class="card-body">
-                <p class="login-box-msg">Login ke Admin Dashboard</p>
+
 
                 <form method="POST" enctype="multipart/form-data" action="../login/submit">
                     @csrf

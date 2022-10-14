@@ -1,394 +1,381 @@
 @extends('userlayout.layout')
-@section('add_css')
-    <link href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" rel="stylesheet" />
-    <link href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" rel="stylesheet" />
-    <style>
-        .marker-cluster-small {
-            background-color: rgba(19, 3, 236, 0.6);
-        }
 
-        .marker-cluster-small div {
-            background-color: rgba(105, 114, 238, 0.6);
-        }
-
-        .marker-cluster-medium {
-            background-color: rgba(11, 29, 131, 0.6);
-        }
-
-        .marker-cluster-medium div {
-            background-color: rgba(59, 57, 167, 0.6);
-        }
-
-        .marker-cluster-large {
-            background-color: rgba(108, 72, 240, 0.719);
-        }
-
-        .marker-cluster-large div {
-            background-color: rgba(16, 9, 109, 0.6);
-        }
-
-        .sekolah .leaflet-popup-tip,
-        .sekolah .leaflet-popup-content-wrapper {
-            background: #124429;
-            color: #ffffff;
-        }
-
-        .pasar .leaflet-popup-tip,
-        .pasar .leaflet-popup-content-wrapper {
-            background: #291749;
-            color: #ffffff;
-        }
-
-        .ibadah .leaflet-popup-tip,
-        .ibadah .leaflet-popup-content-wrapper {
-            background: #008b8b;
-            color: #ffffff;
-        }
-
-        .wisata .leaflet-popup-tip,
-        .wisata .leaflet-popup-content-wrapper {
-            background: #614b00;
-            color: #ffffff;
-        }
-
-        #map {
-            height: 100%;
-            z-index: 0;
-            margin-top: -20px;
-            margin-left: -100px;
-        }
-    </style>
-@endsection
-@section('add_js')
-    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
-    <script>
-        var mymap = L.map('map').setView([-0.0846564, 109.1994678], 13);
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-            attribution: '&copy; SIG Desa 2021',
-            maxZoom: 18,
-            id: 'mapbox/streets-v11',
-            tileSize: 512,
-            zoomOffset: -1,
-            accessToken: 'pk.eyJ1Ijoid2h5dTkiLCJhIjoiY2tsYngwa3dzMWZueDJ3bXZ1OWt0NmN5ZSJ9.bofvis1MNPWTbjq-nIBjcg'
-        }).addTo(mymap);
-        $(document).ready(function() {
-            $('#locate').click(function() {
-                mymap.locate({
-                    setView: true,
-                    maxZoom: 16
-                });
-            });
-        });
-
-        function initializePolygon(data) {
-            var arr = [];
-            for (i in data) {
-                var x = data[i]['lat'];
-                var y = data[i]['lng'];
-                arr.push([x, y]);
-            }
-            return arr;
-        }
-
-        function loadDataDesa(id) {
-            $.ajax({
-                url: "loadDataDesa/" + id,
-                method: 'get',
-                success: function(result) {
-                    console.log(result);
-                    $("#jumlah_sekolah").text("Jumlah Sekolah : " + result.jumlah_sekolah);
-                    $("#jumlah_pasar").text("Jumlah Pasar : " + result.jumlah_pasar);
-                    $("#jumlah_ibadah").text("Jumlah Tempat Ibadah : " + result.jumlah_ibadah);
-                    $("#jumlah_wisata").text("Jumlah Tempat Wisata : " + result.jumlah_wisata);
-                    $("#nama_desa").text("Nama Desa: " + result.desa['nama_desa']);
-                    $("#modalDesa").modal('show');
-                }
-            });
-        }
-        var desa = {!! json_encode($desa->toArray()) !!}
-        desa.forEach(element => {
-            var cor = jQuery.parseJSON(element['batas_desa']);
-            var id = jQuery.parseJSON(element['id']);
-            var path = initializePolygon(cor);
-            var pathLine = L.polygon(path, {
-                id: element['id'],
-                color: element['warna_batas'],
-                fillColor: element['warna_batas'],
-                fillOpacity: 0.4,
-                nama: element['nama_desa'],
-            }).addTo(mymap);
-
-            pathLine.on('click', function(e) {
-                loadDataDesa(e.target.options.id);
-            });
-
-        });
-        var clusterSekolah = L.markerClusterGroup({
-            maxClusterRadius: 60,
-            iconCreateFunction: function(cluster) {
-                var childCount = cluster.getChildCount();
-                var c = ' marker-cluster-';
-                if (childCount < 10) {
-                    c += 'small';
-                } else if (childCount < 100) {
-                    c += 'medium';
-                } else {
-                    c += 'large';
-                }
-                return new L.DivIcon({
-                    html: '<div><span>' + childCount + '</span></div>',
-                    className: 'marker-cluster' + c,
-                    iconSize: new L.Point(40, 40)
-                });
-            }
-        });
-        mymap.addLayer(clusterSekolah);
-
-        var clusterPasar = L.markerClusterGroup({
-            maxClusterRadius: 60,
-            iconCreateFunction: function(cluster) {
-                var childCount = cluster.getChildCount();
-                var c = ' marker-cluster-';
-                if (childCount < 10) {
-                    c += 'small';
-                } else if (childCount < 100) {
-                    c += 'medium';
-                } else {
-                    c += 'large';
-                }
-                return new L.DivIcon({
-                    html: '<div><span>' + childCount + '</span></div>',
-                    className: 'marker-cluster' + c,
-                    iconSize: new L.Point(40, 40)
-                });
-            }
-        });
-        mymap.addLayer(clusterPasar);
-
-        var clusterTempatIbadah = L.markerClusterGroup({
-            maxClusterRadius: 60,
-            iconCreateFunction: function(cluster) {
-                var childCount = cluster.getChildCount();
-                var c = ' marker-cluster-';
-                if (childCount < 10) {
-                    c += 'small';
-                } else if (childCount < 100) {
-                    c += 'medium';
-                } else {
-                    c += 'large';
-                }
-                return new L.DivIcon({
-                    html: '<div><span>' + childCount + '</span></div>',
-                    className: 'marker-cluster' + c,
-                    iconSize: new L.Point(40, 40)
-                });
-            }
-        });
-        mymap.addLayer(clusterTempatIbadah);
-
-        var clusterTempatWisata = L.markerClusterGroup({
-            maxClusterRadius: 60,
-            iconCreateFunction: function(cluster) {
-                var childCount = cluster.getChildCount();
-                var c = ' marker-cluster-';
-                if (childCount < 10) {
-                    c += 'small';
-                } else if (childCount < 100) {
-                    c += 'medium';
-                } else {
-                    c += 'large';
-                }
-                return new L.DivIcon({
-                    html: '<div><span>' + childCount + '</span></div>',
-                    className: 'marker-cluster' + c,
-                    iconSize: new L.Point(40, 40)
-                });
-            }
-        });
-        mymap.addLayer(clusterTempatWisata);
-
-        var popupsekolah = {
-            'maxWidth': '1000',
-            'className': 'sekolah'
-        }
-
-        var popuppasar = {
-            'maxWidth': '1000',
-            'className': 'pasar'
-        }
-
-        var popupwisata = {
-            'maxWidth': '1000',
-            'className': 'wisata'
-        }
-
-        var popupibadah = {
-            'maxWidth': '1000',
-            'className': 'ibadah'
-        }
-
-        var schoolIcon = L.icon({
-            iconUrl: '/assets/marker/schools.png',
-
-            iconSize: [20, 30],
-            iconAnchor: [16, 32],
-            popupAnchor: [0, -16]
-        });
-
-        var pasarIcon = L.icon({
-            iconUrl: '/assets/marker/retail-stores.png',
-
-            iconSize: [20, 30],
-            iconAnchor: [16, 32],
-            popupAnchor: [0, -16]
-        });
-
-        var tempatWisataIcon = L.icon({
-            iconUrl: '/assets/marker/vacant-land.png',
-
-            iconSize: [20, 30],
-            iconAnchor: [16, 32],
-            popupAnchor: [0, -16]
-        });
-
-        var tempatIbadahIcon = L.icon({
-            iconUrl: '/assets/marker/religious-organizations.png',
-
-            iconSize: [20, 30],
-            iconAnchor: [16, 32],
-            popupAnchor: [0, -16]
-        });
-
-        let sekolah = {!! json_encode($sekolah) !!}
-        sekolah.forEach(element => {
-            let markerSekolah = L.marker([element.lat, element.lng], {
-                icon: schoolIcon,
-            }).bindPopup().addTo(mymap);
-            var msgSekolah = "<ul class='list-unstyled'><li class='fw-bold text-center mb-2'>" + element[
-                    'nama_sekolah'] +
-                "</li><li align='center'><img style='display: block;margin-left: auto;margin-right: auto;width: 150px;' src='../img/" +
-                element['foto'] + "'></li><li>Jenjang: " + element['jenis'] + "</li><li>Alamat: " + element[
-                    'alamat'] + "</li><li><form action='/loadDataSekolah/" + element['id'] +
-                "'><button style='margin-top:7px;display: block;margin-left: auto;margin-right: auto;' class='btn btn-primary btn-sm' type='submit'>Lihat Detail</button></form></li></ul>"
-            markerSekolah.bindPopup(msgSekolah, popupsekolah);
-            markerSekolah.on('click', function() {
-                markerSekolah.openPopup();
-            });
-            clusterSekolah.addLayer(markerSekolah);
-        });
-
-        let pasar = {!! json_encode($pasar) !!}
-        pasar.forEach(element => {
-            let markerPasar = L.marker([element.lat, element.lng], {
-                icon: pasarIcon,
-            }).bindPopup().addTo(mymap);
-            var msgPasar = "<ul class='list-unstyled'><li class='fw-bold text-center mb-2'>" + element[
-                    'nama_pasar'] +
-                "</li><li align='center'><img style='display: block;margin-left: auto;margin-right: auto;width: 150px;' src='../img/" +
-                element['foto'] + "'></li><li>No Telepon: " + element['telepon'] + "</li><li>Alamat: " + element[
-                    'alamat'] + "</li><li><form action='/loadDataPasar/" + element['id'] +
-                "'><button style='margin-top:7px;display: block;margin-left: auto;margin-right: auto;' class='btn btn-primary btn-sm' type='submit'>Lihat Detail</button></form></li></ul>"
-            markerPasar.bindPopup(msgPasar, popuppasar);
-            markerPasar.on('click', function() {
-                markerPasar.openPopup();
-            });
-            clusterPasar.addLayer(markerPasar);
-        });
-
-        let tempatibadah = {!! json_encode($tempatibadah) !!}
-        tempatibadah.forEach(element => {
-            let markerTempatIbadah = L.marker([element.lat, element.lng], {
-                icon: tempatIbadahIcon,
-            }).bindPopup().addTo(mymap);
-            var msgTempatIbadah = "<ul class='list-unstyled'><li class='fw-bold text-center mb-2'>" + element[
-                    'nama_tempat_ibadah'] +
-                "</li><li align='center'><img style='display: block;margin-left: auto;margin-right: auto;width: 150px;' src='../img/" +
-                element['foto'] + "'></li><li>Agama: " + element['agama'] + "</li><li>Alamat: " + element[
-                    'alamat'] + "</li><li><form action='/loadDataTempatIbadah/" + element['id'] +
-                "'><button style='margin-top:7px;display: block;margin-left: auto;margin-right: auto;' class='btn btn-primary btn-sm' type='submit'>Lihat Detail</button></form></li></ul>"
-            markerTempatIbadah.bindPopup(msgTempatIbadah, popupibadah);
-            markerTempatIbadah.on('click', function() {
-                markerTempatIbadah.openPopup();
-            });
-            clusterTempatIbadah.addLayer(markerTempatIbadah);
-        });
-
-        let tempatwisata = {!! json_encode($tempatwisata) !!}
-        tempatwisata.forEach(element => {
-            let markerTempatWisata = L.marker([element.lat, element.lng], {
-                icon: tempatWisataIcon,
-            }).bindPopup().addTo(mymap);
-            var msgTempatWisata = "<ul class='list-unstyled'><li class='fw-bold text-center mb-2'>" + element[
-                    'nama_tempat_wisata'] +
-                "</li><li align='center'><img style='display: block;margin-left: auto;margin-right: auto;width: 150px;' src='../img/" +
-                element['foto'] + "'></li><li>No Telepon: " + element['telepon'] + "</li><li>Alamat: " + element[
-                    'alamat'] + "</li><li><form action='/loadDataTempatWisata/" + element['id'] +
-                "'><button style='margin-top:7px;display: block;margin-left: auto;margin-right: auto;' class='btn btn-primary btn-sm' type='submit'>Lihat Detail</button></form></li></ul>"
-            markerTempatWisata.bindPopup(msgTempatWisata, popupwisata);
-            markerTempatWisata.on('click', function() {
-                markerTempatWisata.openPopup();
-            });
-            clusterTempatWisata.addLayer(markerTempatWisata);
-        });
-    </script>
-    <script>
-        (function($) {
-            $(".point-list-view").mCustomScrollbar({
-                scrollButtons: {
-                    enable: true,
-                },
-                theme: "dark-thick",
-                contentTouchScroll: true,
-            });
-        })(jQuery);
-    </script>
-@endsection
 @section('content')
-    <div id="map"></div>
-    <div class="visible-lg visible-md">
-        <div id="sidemenu" class="well">
-            <div style="margin:-10px;" class="panel-heading">
-                <h3 align="center"><i class="fas fa-map-marked"></i> List Data Desa</h3>
-            </div>
-            <div class="divider10"></div>
-            <div class="list-group point-list-view">
-                @foreach ($desa as $d)
-                    <a href="#" class="list-group-item point-item">
-                        <h4 class="list-group-item-heading">{{ $d->nama_desa }}</h4>
-                        <p class="list-group-item-text">Kecamatan: {{ $d->kecamatan->nama_kecamatan }}</p>
-                        <p class="list-group-item-text">Kode Warna: <input type="color" id="color-picker"
-                                value="{{ $d->warna_batas }}" disabled></p>
-                    </a>
-                @endforeach
-            </div>
-        </div>
-    </div>
-    <!-- Modal Desa -->
-    <div class="modal fade left" id="modalDesa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-notify modal-info modal-side modal-top-left" role="document">
-            <!--Content-->
-            <div class="modal-content">
-                <!--Header-->
-                <div class="modal-header">
-                    <h3 style="font-style: bold" class="modal-title" id="nama_desa"></h3>
-                </div>
-                <!--Body-->
-                <div class="modal-body">
-                    <div class="text-left mt-3 ml-1">
-                        <p id="jumlah_pasar"></p>
-                        <p id="jumlah_sekolah"></p>
-                        <p id="jumlah_ibadah"></p>
-                        <p id="jumlah_wisata"></p>
+    <div id="page">
+        <div id="myCarousel1" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel1" data-slide-to="1"></li>
+                <li data-target="#myCarousel1" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active"> <img src="images/banner.png" style="width:100%; height: 500px" alt="First slide">
+                    <div class="carousel-caption">
+                        <h1>vacayhome<br> spa & Resort</h1>
                     </div>
                 </div>
-                <!--Footer-->
-                <div class="modal-footer justify-content-center">
-                    <a type="button" class="btn btn-danger" data-dismiss="modal">Tutup</a>
+                <div class="item"> <img src="images/banner2.png" style="width:100%; height: 500px" alt="Second slide">
+                    <div class="carousel-caption">
+                        <h1>vacayhome<br> spa & Resort</h1>
+                    </div>
+                </div>
+                <div class="item"> <img src="images/banner3.png" style="width:100%; height: 500px" alt="Third slide">
+                    <div class="carousel-caption">
+                        <h1>vacayhome<br> spa & Resort</h1>
+                    </div>
+                </div>
+
+            </div>
+            <a class="left carousel-control" href="#myCarousel1" data-slide="prev"> <img src="images/icons/left-arrow.png"
+                    onmouseover="this.src = 'images/icons/left-arrow-hover.png'"
+                    onmouseout="this.src = 'images/icons/left-arrow.png'" alt="left"></a>
+            <a class="right carousel-control" href="#myCarousel1" data-slide="next"><img src="images/icons/right-arrow.png"
+                    onmouseover="this.src = 'images/icons/right-arrow-hover.png'"
+                    onmouseout="this.src = 'images/icons/right-arrow.png'" alt="left"></a>
+
+        </div>
+        <div class="clearfix"></div>
+
+        <!--service block--->
+        <section class="service-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-6 width-50">
+                        <div class="service-details text-center">
+                            <div class="service-image">
+                                <img alt="image" class="img-responsive" src="images/icons/wifi.png">
+                            </div>
+                            <h4><a>free wifi</a></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6 width-50">
+                        <div class="service-details text-center">
+                            <div class="service-image">
+                                <img alt="image" class="img-responsive" src="images/icons/key.png">
+                            </div>
+                            <h4><a>room service</a></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6 mt-25">
+                        <div class="service-details text-center">
+                            <div class="service-image">
+                                <img alt="image" class="img-responsive" src="images/icons/car.png">
+                            </div>
+                            <h4><a>free parking</a></h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-6 mt-25">
+                        <div class="service-details text-center">
+                            <div class="service-image">
+                                <img alt="image" class="img-responsive" src="images/icons/user.png">
+                            </div>
+                            <h4><a>customer support</a></h4>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!--/.Content-->
-        </div>
+        </section>
+
+        <!--gallery block--->
+        <section class="gallery-block gallery-front">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <div class="gallery-image">
+                            <img class="img-responsive" src="images/room1.png">
+                            <div class="overlay">
+                                <a class="info pop example-image-link img-responsive" href="images/room1.png"
+                                    data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                <p><a>delux room</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <div class="gallery-image">
+                            <img class="img-responsive" src="images/room2.png">
+                            <div class="overlay">
+                                <a class="info pop example-image-link img-responsive" href="images/room2.png"
+                                    data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                <p><a>super room</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <div class="gallery-image">
+                            <img class="img-responsive" src="images/room3.png">
+                            <div class="overlay">
+                                <a class="info pop example-image-link img-responsive" href="images/room3.png"
+                                    data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                <p><a>single room</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <div class="gallery-image">
+                            <img class="img-responsive" src="images/room4.png">
+                            <div class="overlay">
+                                <a class="info pop example-image-link img-responsive" href="images/room4.png"
+                                    data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
+                                <p><a>double room</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--offer block-->
+        <section class="vacation-offer-block">
+            <div class="vacation-offer-bgbanner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                            <div class="vacation-offer-details">
+                                <h1>Your vacation Awaits</h1>
+                                <h4>Lorem ipsum dolor sit amet, conse ctetuer adipiscing elit.</h4>
+                                <button type="button" class="btn btn-default">Choose a package</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End-->
+
+        <!----resort-overview--->
+        <section class="resort-overview-block">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12 remove-padd-right">
+                        <div class="side-A">
+                            <div class="product-thumb">
+                                <div class="image">
+                                    <a><img src="images/category1.png" class="img-responsive" alt="image"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="side-B">
+                            <div class="product-desc-side">
+                                <h3><a>luxury spa</a></h3>
+                                <p>Lorem ipsum dolor sit amet, consec adipiscing elit. Nunc lorem nulla, ornare eu felis
+                                    luctus
+                                    non maximus vitae, portt neque. ipsum dolor sit amet, consec adipiscing elit.</p>
+                                <div class="links"><a href="single-blog.html">Read more</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 remove-padd-left">
+                        <div class="side-A">
+                            <div class="product-thumb">
+                                <div class="image">
+                                    <a><img alt="image" class="img-responsive" src="images/category2.png"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="side-B">
+                            <div class="product-desc-side">
+                                <h3><a>Beatusish ingl</a></h3>
+                                <p>Lorem ipsum dolor sit amet, consec adipiscing elit. Nunc lorem nulla, ornare eu felis
+                                    luctus
+                                    non maximus vitae, portt neque. ipsum dolor sit amet, consec adipiscing elit.</p>
+                                <div class="links"><a href="single-blog.html">Read more</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 remove-padd-right">
+                        <div class="side-A">
+                            <div class="product-desc-side">
+                                <h3><a>luxury room</a></h3>
+                                <p>Lorem ipsum dolor sit amet, consec adipiscing elit. Nunc lorem nulla, ornare eu felis
+                                    luctus
+                                    non maximus vitae, portt neque. ipsum dolor sit amet, consec adipiscing elit.</p>
+                                <div class="links"><a href="single-blog.html">Read more</a></div>
+                            </div>
+                        </div>
+
+                        <div class="side-B">
+                            <div class="product-thumb">
+                                <div class="image txt-rgt">
+                                    <a class="arrow-left"><img src="images/category3.png" class="img-responsive"
+                                            alt="imaga"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 remove-padd-left">
+                        <div class="side-A">
+                            <div class="product-desc-side">
+                                <h3><a>heaven seanery</a></h3>
+                                <p>Lorem ipsum dolor sit amet, consec adipiscing elit. Nunc lorem nulla, ornare eu felis
+                                    luctus
+                                    non maximus vitae, portt neque. ipsum dolor sit amet, consec adipiscing elit.</p>
+                                <div class="links"><a href="single-blog.html">Read more</a></div>
+                            </div>
+                        </div>
+
+                        <div class="side-B">
+                            <div class="product-thumb txt-rgt">
+                                <div class="image">
+                                    <a class="arrow-left"><img src="images/category4.png" class="img-responsive"
+                                            alt="imaga"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-----blog slider----->
+        <!--blog trainer block-->
+        <section class="blog-block-slider">
+            <div class="blog-block-slider-fix-image">
+                <div id="myCarousel2" class="carousel slide" data-ride="carousel">
+                    <div class="container">
+                        <!-- Wrapper for slides -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel2" data-slide-to="1"></li>
+                            <li data-target="#myCarousel2" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <div class="blog-box">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum
+                                        has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                        printer took a galley of type and scrambled it to make a type specimen book. It has
+                                        survived not only</p>
+                                </div>
+                                <div class="blog-view-box">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <img src="images/client1.png" class="media-object">
+                                        </div>
+                                        <div class="media-body">
+                                            <h3 class="media-heading blog-title">Walter Hucko</h3>
+                                            <h5 class="blog-rev">Satisfied Customer</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="blog-box">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum
+                                        has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                        printer took a galley of type and scrambled it to make a type specimen book. It has
+                                        survived not only</p>
+                                </div>
+                                <div class="blog-view-box">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <img src="images/client2.png" class="media-object">
+                                        </div>
+                                        <div class="media-body">
+                                            <h3 class="media-heading blog-title">Jules Boutin</h3>
+                                            <h5 class="blog-rev">Satisfied Customer</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="blog-box">
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                                        Ipsum
+                                        has been the industry's standard dummy text ever since the 1500s, when an unknown
+                                        printer took a galley of type and scrambled it to make a type specimen book. It has
+                                        survived not only</p>
+                                </div>
+                                <div class="blog-view-box">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <img src="images/client3.png" class="media-object">
+                                        </div>
+                                        <div class="media-body">
+                                            <h3 class="media-heading blog-title">Attilio Marzi</h3>
+                                            <h5 class="blog-rev">Satisfied Customer</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </section>
+
+        <!---blog block--->
+        <section class="blog-block">
+            <div class="container">
+                <div class="row offspace-45">
+                    <div class="view-set-block">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="event-blog-image">
+                                <img alt="image" class="img-responsive" src="images/blog1.png">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 side-in-image">
+                            <div class="event-blog-details">
+                                <h4><a href="single-blog.html">Lorem ipsum dolor sit amet</a></h4>
+                                <h5>Post By Admin <a><i aria-hidden="true" class="fa fa-heart-o fa-lg"></i>Likes</a><a><i
+                                            aria-hidden="true" class="fa fa-comment-o fa-lg"></i>comments</a></h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lorem nulla, ornare eu
+                                    felis
+                                    quis, efficitur posuere nulla. Aliquam ac luctus turpis, non faucibus sem. Fusce ornare
+                                    turpis neque, eu commodo sapien porta sed. Nam ut ante turpis. Nam arcu odio,
+                                    scelerisque a
+                                    vehicula vitae, auctor sit amet lectus. </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lorem nulla, ornare eu
+                                    felis
+                                    quis, efficitur posuere nulla. Aliquam ac luctus turpis, non faucibus sem. Fusce ornard
+                                    hendrerit tortor vulputate id. Vestibulum mauris nibh, luctus non maximus vitae,
+                                    porttitor
+                                    eget neque. Donec tristique nunc facilisis, dapibus libero ac</p>
+                                <a class="btn btn-default" href="single-blog.html">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row offspace-45">
+                    <div class="view-set-block">
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="event-blog-image">
+                                <img alt="image" class="img-responsive" src="images/blog2.png">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12 side-in-image">
+                            <div class="event-blog-details">
+                                <h4><a href="single-blog.html">Lorem ipsum dolor sit amet</a></h4>
+                                <h5>Post By Admin <a><i aria-hidden="true" class="fa fa-heart-o fa-lg"></i>Likes</a><a><i
+                                            aria-hidden="true" class="fa fa-comment-o fa-lg"></i>comments</a></h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lorem nulla, ornare eu
+                                    felis
+                                    quis, efficitur posuere nulla. Aliquam ac luctus turpis, non faucibus sem. Fusce ornare
+                                    turpis neque, eu commodo sapien porta sed. Nam ut ante turpis. Nam arcu odio,
+                                    scelerisque a
+                                    vehicula vitae, auctor sit amet lectus. </p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lorem nulla, ornare eu
+                                    felis
+                                    quis, efficitur posuere nulla. Aliquam ac luctus turpis, non faucibus sem. Fusce ornard
+                                    hendrerit tortor vulputate id. Vestibulum mauris nibh, luctus non maximus vitae,
+                                    porttitor
+                                    eget neque. Donec tristique nunc facilisis, dapibus libero ac</p>
+                                <a class="btn btn-default" href="single-blog.html">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
-    <!-- Modal Desa-->
 @endsection

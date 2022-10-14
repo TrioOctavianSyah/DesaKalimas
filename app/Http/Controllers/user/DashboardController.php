@@ -11,16 +11,34 @@ use App\Models\TempatWisata;
 use App\Models\Pasar;
 class DashboardController extends Controller
 {
-    public function about(){
-        return view('user.about');
+    public function home(){
+        return view('user.home');
     }
-    public function dashboard(){
+
+    public function profiledesa(){
+        return view('user.profiledesa');
+    }
+
+    public function pemerintahan(){
+        return view ('user.pemerintahan');
+    }
+
+    public function peta(){
         $desa = Desa::get();
         $sekolah = Sekolah::get();
         $pasar = Pasar::get();
         $tempatwisata = TempatWisata::get();
         $tempatibadah = TempatIbadah::get();
-        return view('user.home',compact('desa','sekolah','pasar','tempatwisata','tempatibadah'));
+        return view('user.peta',compact('desa','sekolah','pasar','tempatwisata','tempatibadah'));
+
+    }
+
+    public function contactus(){
+        return view ('user.contactus');
+    }
+
+     public function about(){
+        return view('user.about');
     }
 
     public function loadDataDesa($id){
