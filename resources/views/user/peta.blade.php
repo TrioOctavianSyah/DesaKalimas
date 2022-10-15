@@ -60,8 +60,11 @@
     </style>
 @endsection
 
+
+
 @section('add_js')
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+
     <script>
         var mymap = L.map('map').setView([-0.0846564, 109.1994678], 13);
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
@@ -346,51 +349,60 @@
 @endsection
 
 @section('content')
-    <div id="map"></div>
-    <div class="visible-lg visible-md">
-        <div id="sidemenu" class="well">
-            <div style="margin:-10px;" class="panel-heading">
-                <h3 align="center"><i class="fas fa-map-marked"></i> List Data Desa</h3>
+    <div id="page">
+        <section class="image-head-wrapper" style="background-image: url({{ asset('temp/images/banner2.jpg') }}">
+            <div class="inner-wrapper">
+                <h1>Peta Desa</h1>
             </div>
-            <div class="divider10"></div>
-            <div class="list-group point-list-view">
-                @foreach ($desa as $d)
-                    <a href="#" class="list-group-item point-item">
-                        <h4 class="list-group-item-heading">{{ $d->nama_desa }}</h4>
-                        <p class="list-group-item-text">Kecamatan: {{ $d->kecamatan->nama_kecamatan }}</p>
-                        <p class="list-group-item-text">Kode Warna: <input type="color" id="color-picker"
-                                value="{{ $d->warna_batas }}" disabled></p>
-                    </a>
-                @endforeach
+        </section>
+        <div class="clearfix"></div>
+
+        {{-- <div class="visible-lg visible-md">
+            <div id="sidemenu" class="well">
+                <div style="margin:-10px;" class="panel-heading">
+                    <h3 align="center"><i class="fas fa-map-marked"></i> List Data Desa</h3>
+                </div>
+                <div class="divider10"></div>
+                <div class="list-group point-list-view">
+                    @foreach ($desa as $d)
+                        <a href="#" class="list-group-item point-item">
+                            <h4 class="list-group-item-heading">{{ $d->nama_desa }}</h4>
+                            <p class="list-group-item-text">Kecamatan: {{ $d->kecamatan->nama_kecamatan }}</p>
+                            <p class="list-group-item-text">Kode Warna: <input type="color" id="color-picker"
+                                    value="{{ $d->warna_batas }}" disabled></p>
+                        </a>
+                    @endforeach
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Modal Desa -->
-    <div class="modal fade left" id="modalDesa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-notify modal-info modal-side modal-top-left" role="document">
-            <!--Content-->
-            <div class="modal-content">
-                <!--Header-->
-                <div class="modal-header">
-                    <h3 style="font-style: bold" class="modal-title" id="nama_desa"></h3>
-                </div>
-                <!--Body-->
-                <div class="modal-body">
-                    <div class="text-left mt-3 ml-1">
-                        <p id="jumlah_pasar"></p>
-                        <p id="jumlah_sekolah"></p>
-                        <p id="jumlah_ibadah"></p>
-                        <p id="jumlah_wisata"></p>
+
+        <div class="modal fade left" id="modalDesa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-notify modal-info modal-side modal-top-left" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                        <h3 style="font-style: bold" class="modal-title" id="nama_desa"></h3>
+                    </div>
+                    <!--Body-->
+                    <div class="modal-body">
+                        <div class="text-left mt-3 ml-1">
+                            <p id="jumlah_pasar"></p>
+                            <p id="jumlah_sekolah"></p>
+                            <p id="jumlah_ibadah"></p>
+                            <p id="jumlah_wisata"></p>
+                        </div>
+                    </div>
+                    <!--Footer-->
+                    <div class="modal-footer justify-content-center">
+                        <a type="button" class="btn btn-danger" data-dismiss="modal">Tutup</a>
                     </div>
                 </div>
-                <!--Footer-->
-                <div class="modal-footer justify-content-center">
-                    <a type="button" class="btn btn-danger" data-dismiss="modal">Tutup</a>
-                </div>
+                <!--/.Content-->
             </div>
-            <!--/.Content-->
-        </div>
+        </div> --}}
     </div>
-    <!-- Modal Desa-->
+
+    <div id="map"></div>
 @endsection

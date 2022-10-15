@@ -17,7 +17,7 @@
                             <div class="product-thumb">
                                 <div class="image">
                                     <a href="single-blog.html"><img alt="image" class="img-responsive"
-                                            src="images/category1.png"></a>
+                                            src="temp/images/category1.png"></a>
                                 </div>
                             </div>
                         </div>
@@ -35,7 +35,7 @@
                         <div class="side-A">
                             <div class="product-thumb">
                                 <div class="image">
-                                    <a href="single-blog.html"><img src="images/category2.png" class="img-responsive"
+                                    <a href="single-blog.html"><img src="temp/images/category2.png" class="img-responsive"
                                             alt="image"></a>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                             <div class="product-thumb">
                                 <div class="image txt-rgt">
                                     <a class="arrow-left" href="single-blog.html"><img alt="imaga" class="img-responsive"
-                                            src="images/category3.png"></a>
+                                            src="temp/images/category3.png"></a>
                                 </div>
                             </div>
                         </div>
@@ -85,7 +85,7 @@
                             <div class="product-thumb txt-rgt">
                                 <div class="image">
                                     <a class="arrow-left" href="single-blog.html"><img alt="imaga" class="img-responsive"
-                                            src="images/category4.png"></a>
+                                            src="temp/images/category4.png"></a>
                                 </div>
                             </div>
                         </div>

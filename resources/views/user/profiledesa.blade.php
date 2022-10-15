@@ -18,7 +18,7 @@
                         <h2 class="blog-title-head">Lorem Ipsum Dolor Sit amet</h2>
                         <p class="user-info">Posted by <a>Admin</a> in <a>General</a> | <a>10 Comments</a></p>
                         <div class="blog-image-single margin-top-small">
-                            <img src="images/banner2.png" class="img-responsive">
+                            <img src="temp/images/banner2.png" class="img-responsive">
                         </div>
                         <p class="blog-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation

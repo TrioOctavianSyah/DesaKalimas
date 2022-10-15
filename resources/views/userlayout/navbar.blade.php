@@ -21,11 +21,9 @@
         <div class="container">
             <div class="top-row">
                 <div class="row">
-
                     <div class="col-md-2 col-sm-6 col-xs-6">
                         <div id="logo">
-                            <!--<a href="index.html"><img src="images/logo.png" alt="logo"></a>-->
-                            <a href="/"><span>Desa</span>Home</a>
+                            <img src="{{ asset('img/kuburaya (6).png') }}" class="media-object" style="width: 21%">
                         </div>
                     </div>
 
