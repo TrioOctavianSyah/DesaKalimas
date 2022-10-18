@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sistem Informasi | Potensi Desa Kalimas </title>
+    <title>Login Admin </title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -26,7 +26,7 @@
                 <img src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <br>
-                <a href="../../index2.html" class="h1"><b>Sistem Informasi</b> Potensi Desa Kalimas</a>
+                <a href="/" class="h1"><b>Sistem Informasi</b> Potensi Desa Kalimas</a>
                 <small class="d-block">v 1.0.0</small>
             </div>
             <div class="card-body">

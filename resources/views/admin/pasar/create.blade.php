@@ -49,7 +49,7 @@
 
         var mymap = L.map('map').setView([-0.0846564, 109.1994678], 13);
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-            attribution: '&copy; SIG Desa 2021',
+            attribution: '&copy; Desa Kalimas 2022',
             maxZoom: 18,
             id: 'mapbox/streets-v11',
             tileSize: 512,

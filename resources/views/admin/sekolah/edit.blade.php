@@ -49,7 +49,7 @@
 
         var mymap = L.map('map').setView([-0.0846564, 109.1994678], 13);
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-            attribution: '&copy; SIG Desa 2021',
+            attribution: '&copy; Desa Kalimas 2022',
             maxZoom: 18,
             id: 'mapbox/streets-v11',
             tileSize: 512,
@@ -291,13 +291,15 @@
                                         </option>
                                         <option value="TK" {{ $sekolah->jenis == 'TK' ? 'selected' : '' }}>Taman
                                             Kanak-kanak</option>
-                                        <option value="SD" {{ $sekolah->jenis == 'SD' ? 'selected' : '' }}>Sekolah Dasar
+                                        <option value="SD" {{ $sekolah->jenis == 'SD' ? 'selected' : '' }}>Sekolah
+                                            Dasar
                                         </option>
                                         <option value="SMP" {{ $sekolah->jenis == 'SMP' ? 'selected' : '' }}>Sekolah
                                             Menengah Pertama</option>
                                         <option value="SMA" {{ $sekolah->jenis == 'SMA' ? 'selected' : '' }}>Sekolah
                                             Menengah Atas</option>
-                                        <option value="Universitas" {{ $sekolah->jenis == 'Universitas' ? 'selected' : '' }}>
+                                        <option value="Universitas"
+                                            {{ $sekolah->jenis == 'Universitas' ? 'selected' : '' }}>
                                             Universitas</option>
                                     </select>
                                     <small style="color: red">

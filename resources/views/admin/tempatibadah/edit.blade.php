@@ -49,7 +49,7 @@
 
         var mymap = L.map('map').setView([-0.0846564, 109.1994678], 13);
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-            attribution: '&copy; SIG Desa 2021',
+            attribution: '&copy; Desa Kalimas 2022',
             maxZoom: 18,
             id: 'mapbox/streets-v11',
             tileSize: 512,
@@ -288,11 +288,14 @@
                                     <select class="form-control" id="jenis" rows="3" name="agama" required>
                                         <option value="" {{ $tempatibadah->agama == null ? 'selected' : '' }}>Pilih
                                             Agama</option>
-                                        <option value="Hindu" {{ $tempatibadah->agama == 'Hindu' ? 'selected' : '' }}>Hindu
+                                        <option value="Hindu" {{ $tempatibadah->agama == 'Hindu' ? 'selected' : '' }}>
+                                            Hindu
                                         </option>
-                                        <option value="Buddha" {{ $tempatibadah->agama == 'Buddha' ? 'selected' : '' }}>Budha
+                                        <option value="Buddha" {{ $tempatibadah->agama == 'Buddha' ? 'selected' : '' }}>
+                                            Budha
                                         </option>
-                                        <option value="Islam" {{ $tempatibadah->agama == 'Islam' ? 'selected' : '' }}>Islam
+                                        <option value="Islam" {{ $tempatibadah->agama == 'Islam' ? 'selected' : '' }}>
+                                            Islam
                                         </option>
                                         <option value="Kristen" {{ $tempatibadah->agama == 'Kristen' ? 'selected' : '' }}>
                                             Kristen</option>

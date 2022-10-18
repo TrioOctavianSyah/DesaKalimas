@@ -16,11 +16,12 @@
                     <p class="text-left">Nulla pharetra eleifend tellus in molestie. In vel neque sit amet urna gravida
                         blandit
                         nec id massa. Phasellus eu aliquet augue. Quisque fringilla urna quam.</p>
-                    <p class="text-right">701 Old York Drive Richmond USA. <i class="fa fa-map-marker fa-lg"></i></p>
-                    <p class="text-right"><a href="tel:+1-202-555-0100"> +1-202-555-0100 <i
-                                class="fa fa-phone fa-lg"></i></a>
+                    <p class="text-right">Jalan Raya Kalimas No.26, Kalimas, Kec. Sungai Kakap, Kab. Kubu Raya,
+                        Kalimantan Barat 78381 <i class="fa fa-map-marker fa-lg"></i></p>
+                    <p class="text-right"><a href="tel:+1-202-555-0100"> +62 <i class="fa fa-phone fa-lg"></i></a>
                     </p>
-                    <p class="text-right"><a href="mailto:demo@info.com"> demo@info.com <i class="fa fa-envelope"></i></a>
+                    <p class="text-right"><a href="mailto:demo@info.com"> desakalimas@gmail.com <i
+                                class="fa fa-envelope"></i></a>
                     </p>
                 </div>
                 <div class="col-md-6 contact-form">

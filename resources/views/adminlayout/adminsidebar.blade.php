@@ -29,6 +29,14 @@
              with font-awesome or any other icon font library -->
                 <li class="nav-header">Menu</li>
                 <li class="nav-item">
+                    <a href="/" class="nav-link {{ Request::is('/') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-home"></i>
+                        <p>
+                            Home
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="/admin/dashboard" class="nav-link {{ Request::is('admin/dashboard*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>

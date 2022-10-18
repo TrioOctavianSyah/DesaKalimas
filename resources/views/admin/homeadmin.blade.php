@@ -58,7 +58,7 @@
     <script>
         var mymap = L.map('map').setView([-0.0819098, 109.2025578], 13);
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-            attribution: '&copy; SIG Desa 2021',
+            attribution: '&copy; Desa Kalimas 2022',
             maxZoom: 18,
             id: 'mapbox/streets-v11',
             tileSize: 512,
@@ -184,7 +184,7 @@
                 icon: pasarIcon,
             }).bindPopup().addTo(mymap);
             var msgPasar = "<ul class='list-unstyled'><li class='fw-bold text-center mb-2'>" + element[
-                'nama_pasar'] +
+                    'nama_pasar'] +
                 "</li><li align='center'><img style='display: block;margin-left: auto;margin-right: auto;width: 50%;' src='../img/" +
                 element['foto'] + "'></li><li>No Telepon: " + element['telepon'] + "</li><li>Alamat: " + element[
                     'alamat'] +
@@ -204,7 +204,7 @@
                     'nama_tempat_ibadah'] +
                 "</li><li align='center'><img style='display: block;margin-left: auto;margin-right: auto;width: 50%;' src='../img/" +
                 element['foto'] + "'></li><li>Agama: " + element['agama'] + "</li><li>Alamat: " + element[
-                'alamat'] +
+                    'alamat'] +
                 "</li><li><a style='margin-top:7px;display: block;margin-left: auto;margin-right: auto;' class='btn btn-primary btn-sm text-white' href='/admin/potensi/tempatibadah/" +
                 element['id'] + "'>Lihat Detail</a></li></ul>"
             markerTempatIbadah.bindPopup(msgTempatIbadah, popupibadah);

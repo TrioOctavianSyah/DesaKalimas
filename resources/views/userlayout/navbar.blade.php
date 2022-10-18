@@ -23,7 +23,7 @@
                 <div class="row">
                     <div class="col-md-2 col-sm-6 col-xs-6">
                         <div id="logo">
-                            <img src="{{ asset('img/kuburaya (6).png') }}" class="media-object" style="width: 21%">
+                            <img src="{{ asset('img/logo-kuburaya.png') }}" class="media-object" style="width: 21% ">
                         </div>
                     </div>
 
@@ -41,7 +41,7 @@
                             </div>
                             <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
                                 <ul class="list-unstyled nav1 cl-effect-10">
-                                    <li><a href="/" data-hover="Home" class=active"><span>Home</span></a></li>
+                                    <li><a href="/" data-hover="Home"><span>Home</span></a></li>
                                     <li><a data-hover="Profile Desa" href="/profiledesa"><span>Profile Desa</span></a>
                                     </li>
                                     <li><a data-hover="Pemerintahan" href="/pemerintahan"><span>Pemerintahan</span></a>

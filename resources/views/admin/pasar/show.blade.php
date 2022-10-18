@@ -21,11 +21,11 @@ Manajemen Potensi Desa
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
-            
+
             reader.onload = function(e) {
             $('#propic').attr('src', e.target.result);
             }
-            
+
             reader.readAsDataURL(input.files[0]); // convert to base64 string
         }
     }
@@ -42,14 +42,14 @@ Manajemen Potensi Desa
     var pasarIcon = L.icon({
         iconUrl: '/assets/marker/retail-stores.png',
 
-        iconSize:     [20, 30], 
-        iconAnchor:   [16, 32], 
-        popupAnchor:  [0, -16] 
+        iconSize:     [20, 30],
+        iconAnchor:   [16, 32],
+        popupAnchor:  [0, -16]
     });
 
     var mymap = L.map('map').setView([lat, lng], 14);
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-        attribution: '&copy; SIG Desa 2021',
+        attribution: '&copy; Desa Kalimas 2022',
         maxZoom: 18,
         id: 'mapbox/streets-v11',
         tileSize: 512,
@@ -71,7 +71,7 @@ Manajemen Potensi Desa
         }
     });
 
-    mymap.pm.addControls({  
+    mymap.pm.addControls({
         position: 'topleft',
         drawCircle: false,
         drawMarker: false,
@@ -113,14 +113,14 @@ Manajemen Potensi Desa
                             nama: element['nama_desa'],
                         }).addTo(mymap);
                     }
-            });            
+            });
         }
         loadDesa();
 
         function loadMarker(){
             var pasar = {!! json_encode($pasar) !!}
             var marker = L.marker([pasar.lat, pasar.lng],{icon: pasarIcon}).addTo(mymap);
-            
+
             mymap.pm.addControls({
                 editMode: false,
                 drawMarker: false,
@@ -139,7 +139,7 @@ Manajemen Potensi Desa
                     drawMarker: true,
                     removalMode: false,
                 });
-            });  
+            });
         }
         loadMarker();
 </script>
@@ -212,7 +212,7 @@ Manajemen Potensi Desa
                                         {{$message}}
                                     @enderror
                                 </small>
-                            </div> 
+                            </div>
                             <div class="form-group">
                                 <label for="">Alamat</label>
                                 <input type="text" class="form-control" name="alamat" placeholder="Masukkan alamat pasar" disabled value="{{$pasar->alamat}}">
@@ -239,7 +239,7 @@ Manajemen Potensi Desa
                                         {{$message}}
                                     @enderror
                                 </small>
-                            </div>                       
+                            </div>
                     </div>
                 </div>
             </div>

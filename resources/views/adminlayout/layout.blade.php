@@ -71,7 +71,7 @@
 
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; 2022 SIG Desa Kalimas</strong>
+            <strong>Copyright &copy; 2022 Desa Kalimas</strong>
             All rights reserved.
         </footer>
 

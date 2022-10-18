@@ -17,13 +17,13 @@
                             <div class="product-thumb">
                                 <div class="image">
                                     <a href="single-blog.html"><img alt="image" class="img-responsive"
-                                            src="temp/images/category1.png"></a>
+                                            src="temp/images/banner5.jpg"></a>
                                 </div>
                             </div>
                         </div>
                         <div class="side-B">
                             <div class="product-desc-side">
-                                <h3><a href="single-blog.html">luxury spa</a></h3>
+                                <h3><a href="single-blog.html">Lorem ipsum</a></h3>
                                 <p>Lorem ipsum dolor sit amet, consec adipiscing elit. Nunc lorem nulla, ornare eu felis
                                     luctus non maximus vitae, portt neque. ipsum dolor sit amet, consec adipiscing elit.</p>
                                 <div class="links"><a href="single-blog.html">Read more</a></div>
@@ -35,14 +35,14 @@
                         <div class="side-A">
                             <div class="product-thumb">
                                 <div class="image">
-                                    <a href="single-blog.html"><img src="temp/images/category2.png" class="img-responsive"
+                                    <a href="single-blog.html"><img src="temp/images/banner5.jpg" class="img-responsive"
                                             alt="image"></a>
                                 </div>
                             </div>
                         </div>
                         <div class="side-B">
                             <div class="product-desc-side">
-                                <h3><a href="single-blog.html">Beatusish ingl</a></h3>
+                                <h3><a href="single-blog.html">Lorem ipsum</a></h3>
                                 <p>Lorem ipsum dolor sit amet, consec adipiscing elit. Nunc lorem nulla, ornare eu felis
                                     luctus non maximus vitae, portt neque. ipsum dolor sit amet, consec adipiscing elit.</p>
                                 <div class="links"><a href="single-blog.html">Read more</a></div>
@@ -54,7 +54,7 @@
                     <div class="col-md-6 col-sm-12 col-xs-12 remove-padd-right">
                         <div class="side-A">
                             <div class="product-desc-side">
-                                <h3><a href="single-blog.html">luxury room</a></h3>
+                                <h3><a href="single-blog.html">Lorem ipsum</a></h3>
                                 <p>Lorem ipsum dolor sit amet, consec adipiscing elit. Nunc lorem nulla, ornare eu felis
                                     luctus non maximus vitae, portt neque. ipsum dolor sit amet, consec adipiscing elit.</p>
                                 <div class="links"><a href="single-blog.html">Read more</a></div>
@@ -65,7 +65,7 @@
                             <div class="product-thumb">
                                 <div class="image txt-rgt">
                                     <a class="arrow-left" href="single-blog.html"><img alt="imaga" class="img-responsive"
-                                            src="temp/images/category3.png"></a>
+                                            src="temp/images/banner5.jpg"></a>
                                 </div>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
                     <div class="col-md-6 col-sm-12 col-xs-12 remove-padd-left">
                         <div class="side-A">
                             <div class="product-desc-side">
-                                <h3><a href="single-blog.html">heaven seanery</a></h3>
+                                <h3><a href="single-blog.html">Lorem ipsum</a></h3>
                                 <p>Lorem ipsum dolor sit amet, consec adipiscing elit. Nunc lorem nulla, ornare eu felis
                                     luctus non maximus vitae, portt neque. ipsum dolor sit amet, consec adipiscing elit.</p>
                                 <div class="links"><a href="single-blog.html">Read more</a></div>
@@ -85,7 +85,7 @@
                             <div class="product-thumb txt-rgt">
                                 <div class="image">
                                     <a class="arrow-left" href="single-blog.html"><img alt="imaga" class="img-responsive"
-                                            src="temp/images/category4.png"></a>
+                                            src="temp/images/banner5.jpg"></a>
                                 </div>
                             </div>
                         </div>
