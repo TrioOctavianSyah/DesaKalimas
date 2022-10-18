@@ -26,7 +26,6 @@
                             <img src="{{ asset('img/logo-kuburaya.png') }}" class="media-object" style="width: 21% ">
                         </div>
                     </div>
-
                     <div class="col-md-8 col-sm-12 col-xs-12 remove-padd">
                         <nav class="navbar navbar-default">
                             <div class="navbar-header page-scroll">
@@ -37,7 +36,6 @@
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                                 </button>
-
                             </div>
                             <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
                                 <ul class="list-unstyled nav1 cl-effect-10">
@@ -51,7 +49,6 @@
                                     <li><a data-hover="Hubungi Kami" href="/contactus"><span>Hubungi Kami</span></a>
                                     </li>
                                 </ul>
-
                             </div>
                         </nav>
                     </div>

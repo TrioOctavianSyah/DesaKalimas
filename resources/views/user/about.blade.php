@@ -7,8 +7,6 @@
             </div>
         </section>
         <div class="clearfix"></div>
-
-
         <section class="about-block">
             <div class="container">
                 <div class="row">

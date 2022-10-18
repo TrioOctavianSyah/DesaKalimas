@@ -349,7 +349,7 @@
 
 @section('content')
     <div id="page">
-        <section class="image-head-wrapper" style="background-image: url({{ asset('temp/images/banner2.jpg') }}">
+        <section class="image-head-wrapper" style="background-image: url({{ asset('temp/images/banner5.jpg') }}">
             <div class="inner-wrapper">
                 <h1>Peta Desa</h1>
             </div>
@@ -363,15 +363,15 @@
                     <div class="col-md-3 col-sm-3 col-xs-6 width-50">
                         <div class="service-details text-center">
                             <div class="service-image">
-                                <img alt="image" class="img-responsive" src="temp/images/icons/potensi-desa.png">
+                                <img alt="image" class="img-responsive" src="temp/images/icons/school.png">
                             </div>
-                            <h4><a href="#tentang-desa">Sekolah</a></h4>
+                            <h4><a href="/loadDataSekolah">Sekolah</a></h4>
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-6 width-50">
                         <div class="service-details text-center">
                             <div class="service-image">
-                                <img alt="image" class="img-responsive" src="temp/images/icons/struktur-organisasi.png">
+                                <img alt="image" class="img-responsive" src="temp/images/icons/mosque.png">
                             </div>
                             <h4><a href="#struktur-organisasi">Tempat Ibadah</a></h4>
                         </div>
@@ -379,7 +379,7 @@
                     <div class="col-md-3 col-sm-3 col-xs-6 mt-25">
                         <div class="service-details text-center">
                             <div class="service-image">
-                                <img alt="image" class="img-responsive" src="temp/images/icons/berita-desa.png">
+                                <img alt="image" class="img-responsive" src="temp/images/icons/tourism.png">
                             </div>
                             <h4><a href="#berita-desa">Tempat Wisata</a></h4>
                         </div>
@@ -387,7 +387,7 @@
                     <div class="col-md-3 col-sm-3 col-xs-6 mt-25">
                         <div class="service-details text-center">
                             <div class="service-image">
-                                <img alt="image" class="img-responsive" src="temp/images/icons/user.png">
+                                <img alt="image" class="img-responsive" src="temp/images/icons/market.png">
                             </div>
                             <h4><a href="#pasar">Pasar</a></h4>
                         </div>

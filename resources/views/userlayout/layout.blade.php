@@ -17,10 +17,10 @@
     <link href="{{ asset('assets/p/ext/customScroll/css/jquery.mCustomScrollbar.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/p/css/style.default.css') }}" rel="stylesheet" />
 
-    <!-- Bootstrap core CSS -->
+
     <link href="{{ asset('temp/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('temp/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
-    <!-- Custom styles for this template -->
+
     <link href="{{ asset('temp/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('temp/fonts/antonio-exotic/stylesheet.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('temp/css/lightbox.min.css') }}">
@@ -84,7 +84,7 @@
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="footer-details">
-                        <h4>Now On Instagram</h4>
+                        <h4>Lorem ipsum</h4>
                         <div class="row">
                             <div class="instagram-images">
                                 <div id="instafeed"></div>
@@ -98,7 +98,6 @@
                 &copy; 2022 All right reserved. Website Resmi <a href="/" target="_blank">Desa
                     Kalimas</a>
             </div>
-
         </div>
     </footer>
     <a style="display: none;" href="javascript:void(0);" class="scrollTop back-to-top" id="back-to-top">
@@ -106,7 +105,6 @@
         <span>Top</span>
     </a>
 
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="{{ asset('assets/p/js/jquery-1.10.2.min.js') }}"></script>
     <script src="{{ asset('assets/p/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/p/ext/customScroll/js/jquery.mCustomScrollbar.min.js') }}"></script>

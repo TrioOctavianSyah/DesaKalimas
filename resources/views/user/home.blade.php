@@ -11,19 +11,19 @@
                 <li data-target="#myCarousel1" data-slide-to="2"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="item active"> <img src="{{ asset('temp/images/banner.png') }}" style="width:100%; height: 500px"
+                <div class="item active"> <img src="temp/images/banner5.jpg" style="width:100%; height: 500px"
                         alt="First slide">
                     <div class="carousel-caption">
                         <h1>Text 1 <br> Text 2</h1>
                     </div>
                 </div>
-                <div class="item"> <img src="temp/images/banner2.png" style="width:100%; height: 500px"
+                <div class="item"> <img src="temp/images/banner5.jpg" style="width:100%; height: 500px"
                         alt="Second slide">
                     <div class="carousel-caption">
                         <h1>Text 1<br> Text 2</h1>
                     </div>
                 </div>
-                <div class="item"> <img src="temp/images/banner3.png" style="width:100%; height: 500px" alt="Third slide">
+                <div class="item"> <img src="temp/images/banner5.jpg" style="width:100%; height: 500px" alt="Third slide">
                     <div class="carousel-caption">
                         <h1>Text 1<br> Text 2</h1>
                     </div>
@@ -41,7 +41,6 @@
         </div>
         <div class="clearfix"></div>
 
-        <!--service block--->
         <section class="service-block">
             <div class="container">
                 <div class="row">
@@ -81,8 +80,10 @@
             </div>
         </section>
 
-        <!--offer block-->
         <section class="vacation-offer-block">
+            <div class="product-desc-side">
+                <h3><a id="tentang-desa" href=""></a>Potensi Desa</h3>
+            </div>
             <div class="vacation-offer-bgbanner">
                 <div class="container">
                     <div class="row">
@@ -97,17 +98,15 @@
                 </div>
             </div>
         </section>
-        <!--End-->
 
-        <!----resort-overview--->
-        <section id="tentang-desa" class="resort-overview-block">
+        <section class="resort-overview-block">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-sm-12 col-xs-12 remove-padd-right">
                         <div class="side-A">
                             <div class="product-thumb">
                                 <div class="image">
-                                    <a><img src="temp/images/category1.png" class="img-responsive" alt="image"></a>
+                                    <a><img src="temp/images/banner5.jpg" class="img-responsive" alt="image"></a>
                                 </div>
                             </div>
                         </div>
@@ -126,7 +125,7 @@
                         <div class="side-A">
                             <div class="product-thumb">
                                 <div class="image">
-                                    <a><img alt="image" class="img-responsive" src="temp/images/category2.png"></a>
+                                    <a><img alt="image" class="img-responsive" src="temp/images/banner5.jpg"></a>
                                 </div>
                             </div>
                         </div>
@@ -155,7 +154,7 @@
                         <div class="side-B">
                             <div class="product-thumb">
                                 <div class="image txt-rgt">
-                                    <a class="arrow-left"><img src="temp/images/category3.png" class="img-responsive"
+                                    <a class="arrow-left"><img src="temp/images/banner5.jpg" class="img-responsive"
                                             alt="imaga"></a>
                                 </div>
                             </div>
@@ -176,7 +175,7 @@
                         <div class="side-B">
                             <div class="product-thumb txt-rgt">
                                 <div class="image">
-                                    <a class="arrow-left"><img src="temp/images/category4.png" class="img-responsive"
+                                    <a class="arrow-left"><img src="temp/images/banner5.jpg" class="img-responsive"
                                             alt="imaga"></a>
                                 </div>
                             </div>
@@ -188,9 +187,10 @@
             </div>
         </section>
 
-        <!-----blog slider----->
-        <!--blog trainer block-->
-        <section id="struktur-organisasi" class="blog-block-slider">
+        <section class="blog-block-slider">
+            <div class="product-desc-side">
+                <h3><a id="struktur-organisasi" href=""></a>Struktur Organisasi</h3>
+            </div>
             <div class="blog-block-slider-fix-image">
                 <div id="myCarousel2" class="carousel slide" data-ride="carousel">
                     <div class="container">
@@ -247,15 +247,14 @@
             <div class="clearfix"></div>
         </section>
 
-        <!--gallery block--->
         <section class="gallery-block gallery-front">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                         <div class="gallery-image">
-                            <img class="img-responsive" src="temp/images/room1.png">
+                            <img class="img-responsive" src="temp/images/banner5.jpg">
                             <div class="overlay">
-                                <a class="info pop example-image-link img-responsive" href="temp/images/room1.png"
+                                <a class="info pop example-image-link img-responsive" href="temp/images/banner5.jpg"
                                     data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
                                 <p><a>Aparatur Desa</a></p>
                             </div>
@@ -264,9 +263,9 @@
 
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                         <div class="gallery-image">
-                            <img class="img-responsive" src="temp/images/room3.png">
+                            <img class="img-responsive" src="temp/images/banner5.jpg">
                             <div class="overlay">
-                                <a class="info pop example-image-link img-responsive" href="temp/images/room3.png"
+                                <a class="info pop example-image-link img-responsive" href="temp/images/banner5.jpg"
                                     data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
                                 <p><a>Badan Permusyawaratan Desa</a></p>
                             </div>
@@ -274,9 +273,9 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                         <div class="gallery-image">
-                            <img class="img-responsive" src="temp/images/room3.png">
+                            <img class="img-responsive" src="temp/images/banner5.jpg">
                             <div class="overlay">
-                                <a class="info pop example-image-link img-responsive" href="temp/images/room3.png"
+                                <a class="info pop example-image-link img-responsive" href="temp/images/banner5.jpg"
                                     data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
                                 <p><a>Pemberdayaan Kesejahteraan Keluarga</a></p>
                             </div>
@@ -284,9 +283,9 @@
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                         <div class="gallery-image">
-                            <img class="img-responsive" src="temp/images/room4.png">
+                            <img class="img-responsive" src="temp/images/banner5.jpg">
                             <div class="overlay">
-                                <a class="info pop example-image-link img-responsive" href="temp/images/room4.png"
+                                <a class="info pop example-image-link img-responsive" href="temp/images/banner5.jpg"
                                     data-lightbox="example-1"><i class="fa fa-search" aria-hidden="true"></i></a>
                                 <p><a>puskesdes</a></p>
                             </div>
@@ -296,8 +295,10 @@
             </div>
         </section>
 
-        <!---blog block--->
-        <section id="berita-desa" class="blog-block">
+        <section class="blog-block">
+            <div class="product-desc-side">
+                <h3><a id="berita-desa" href=""></a>Berita Desa</h3>
+            </div>
             <div class="container">
                 <div class="row offspace-45">
                     <div class="view-set-block">
@@ -361,6 +362,5 @@
                 </div>
             </div>
         </section>
-
     </div>
 @endsection

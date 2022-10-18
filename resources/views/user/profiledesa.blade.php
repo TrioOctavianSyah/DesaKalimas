@@ -2,7 +2,7 @@
 
 @section('content')
     <div id="page">
-        <section class="image-head-wrapper" style="background-image: url({{ asset('temp/images/banner2.jpg') }}">
+        <section class="image-head-wrapper" style="background-image: url({{ asset('temp/images/banner5.jpg') }}">
             <div class="inner-wrapper">
                 <h1>Profile Desa</h1>
             </div>
@@ -13,7 +13,6 @@
         <section class="blog">
             <div class="container">
                 <div class="row">
-
                     <div class="col-md-9 col-sm-8 col-xs-12">
                         <h2 class="blog-title-head">Lorem Ipsum Dolor Sit amet</h2>
                         <p class="user-info">Posted by <a>Admin</a> in <a>General</a> | <a>10 Comments</a></p>
