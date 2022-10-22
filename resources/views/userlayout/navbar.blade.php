@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div id="page">
     <div class="top-header">
         <div class="container">
@@ -87,3 +88,34 @@
      </div>
      <!-- /.navbar-collapse -->
  </nav> --}}
+=======
+<nav class="navbar navbar-default nav-fixed-top" role="navigation" id="app-nav-bar">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle"
+        data-toggle="collapse"
+        data-target=".navbar-ex1-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Sistem Informasi Geografi Potensi Desaa</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav">
+        <li class="{{ Request::is('/') ? 'active' : '' }}">
+          <a href="/">Home</a>
+        </li>
+        <li class="{{ Request::is('about') ? 'active' : '' }}">
+          <a href="/about">About</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </nav>
+>>>>>>> 80f48fbd207e09a1822d319d93b78d15f0aa365f

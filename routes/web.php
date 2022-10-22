@@ -52,5 +52,9 @@ Route::prefix('admin')->group(function () {
         Route::resource('tempatwisata', 'admin\TempatWisataController');
         Route::resource('pasar', 'admin\PasarController');
     });
+
+    Route::resource('profile', 'admin\ProfileController');
+    Route::resource('artikel', 'admin\ArtikelController');
+
     Route::get('/logout','admin\AuthController@logout')->name('admin-logout');
 });
