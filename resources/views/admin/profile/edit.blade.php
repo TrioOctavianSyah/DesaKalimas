@@ -3,7 +3,7 @@
     Manajemen Profile Desa
 @endsection
 @section('header_title')
-    <i class="nav-icon fas fa-building"></i> Manajemen Profile Desa
+    <i class="nav-icon fas fa-users"></i> Manajemen Profile Desa
 @endsection
 @section('breadcrumb')
     <li class="breadcrumb-item"><a href="/admin/profile">Manajemen Profile Desa</a></li>
@@ -65,7 +65,7 @@
                                 @csrf
                                 <input type="hidden" name="_method" value="PUT">
                                 <div class="form-group">
-                                    <label for="">Nama Profile</label>
+                                    <label for="">Nama Aparatur</label>
                                     <input type="text" class="form-control" name="nama_profile"
                                         placeholder="Masukkan nama kabupaten" required
                                         value="{{ $profile->nama_kabupaten }}">

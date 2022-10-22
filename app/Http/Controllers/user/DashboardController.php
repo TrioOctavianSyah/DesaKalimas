@@ -4,6 +4,8 @@ namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Artikel;
+use App\Models\Profile;
 use App\Models\Desa;
 use App\Models\Sekolah;
 use App\Models\TempatIbadah;
@@ -12,11 +14,13 @@ use App\Models\Pasar;
 class DashboardController extends Controller
 {
     public function home(){
-        return view('user.home');
+        $artikel = Artikel::get();
+        return view('user.home', compact('artikel'));
     }
 
     public function profiledesa(){
-        return view('user.profiledesa');
+        $profile =Profile::get();
+        return view('user.profiledesa' , compact('profile'));
     }
 
     public function pemerintahan(){

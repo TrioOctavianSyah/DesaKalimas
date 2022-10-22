@@ -3,7 +3,7 @@
     Manajemen Artikel Desa
 @endsection
 @section('header_title')
-    <i class="nav-icon fas fa-building"></i> Manajemen Artikel Desa
+    <i class="nav-icon fas fa-newspaper"></i> Manajemen Artikel Desa
 @endsection
 @section('breadcrumb')
     <li class="breadcrumb-item"><a href="/admin/artikel">Manajemen Artikel Desa</a></li>

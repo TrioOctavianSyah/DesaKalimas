@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div id="page">
     <div class="top-header">
         <div class="container">
@@ -40,14 +39,25 @@
                             </div>
                             <div class="collapse navigation navbar-collapse navbar-ex1-collapse remove-space">
                                 <ul class="list-unstyled nav1 cl-effect-10">
-                                    <li><a href="/" data-hover="Home"><span>Home</span></a></li>
-                                    <li><a data-hover="Profile Desa" href="/profiledesa"><span>Profile Desa</span></a>
+                                    <li><a href="/" data-hover="Home"
+                                            class="nav-link {{ Request::is('/') ? 'active' : '' }}"><span>Home</span></a>
                                     </li>
-                                    <li><a data-hover="Pemerintahan" href="/pemerintahan"><span>Pemerintahan</span></a>
+                                    <li><a data-hover="Profile Desa" href="/profiledesa"
+                                            class="nav-link {{ Request::is('/profiledesa') ? 'active' : '' }}"><span>Profile
+                                                Desa</span></a>
                                     </li>
-                                    <li><a data-hover="Peta" href="/peta"><span>Peta</span></a></li>
-                                    <li><a data-hover="Tentang Desa" href="/about"><span>Tentang Desa</span></a></li>
-                                    <li><a data-hover="Hubungi Kami" href="/contactus"><span>Hubungi Kami</span></a>
+                                    <li><a data-hover="Pemerintahan" href="/pemerintahan"
+                                            class="nav-link {{ Request::is('/pemerintahan') ? 'active' : '' }}"><span>Pemerintahan</span></a>
+                                    </li>
+                                    <li><a data-hover="Peta" href="/peta"
+                                            class=" nav-link {{ Request::is('/peta') ? 'active' : '' }}"><span>Peta</span></a>
+                                    </li>
+                                    <li><a data-hover="Tentang Desa" href="/about"
+                                            class="nav-link {{ Request::is('/about') ? 'active' : '' }}"><span>Tentang
+                                                Desa</span></a></li>
+                                    <li><a data-hover="Hubungi Kami" href="/contactus"
+                                            class="nav-link {{ Request::is('/contactus') ? 'active' : '' }}"><span>Hubungi
+                                                Kami</span></a>
                                     </li>
                                 </ul>
                             </div>
@@ -88,8 +98,8 @@
      </div>
      <!-- /.navbar-collapse -->
  </nav> --}}
-=======
-<nav class="navbar navbar-default nav-fixed-top" role="navigation" id="app-nav-bar">
+
+{{-- <nav class="navbar navbar-default nav-fixed-top" role="navigation" id="app-nav-bar">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button
@@ -117,5 +127,4 @@
       </ul>
     </div>
     <!-- /.navbar-collapse -->
-  </nav>
->>>>>>> 80f48fbd207e09a1822d319d93b78d15f0aa365f
+</nav> --}}

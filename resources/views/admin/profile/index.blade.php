@@ -3,7 +3,7 @@
     Manajemen Profile Desa
 @endsection
 @section('header_title')
-    <i class="nav-icon fas fa-building"></i> Manajemen Profile Desa
+    <i class="nav-icon fas fa-users"></i> Manajemen Profile Desa
 @endsection
 @section('breadcrumb')
     <li class="breadcrumb-item"><a href="/admin/profile">Manajemen Profile Desa</a></li>
