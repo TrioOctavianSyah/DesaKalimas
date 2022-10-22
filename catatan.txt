@@ -1,0 +1,16 @@
+Rancangan Database User :
+
+1. Profile = Struktur Organisasi
+nama aparat desa
+NIP aparat desa
+jabatan aparat desa
+poto aparat desa
+
+2. Berita = Artikel desa
+image/video
+author
+title
+content
+
+php artisan migrate:rollback --path=/database/migrations/fileName.php
+

@@ -1,6 +1,4 @@
-<!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
     <a href="/admin" class="brand-link">
         <img src="{{ asset('img/kuburaya.png') }}" alt="Admin Logo" class="brand-image img-circle elevation-3"
             style="opacity: .8">
@@ -25,10 +23,8 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
-                <!-- Add icons to the links using the .nav-icon class
-             with font-awesome or any other icon font library -->
-                <li class="nav-header">Menu</li>
-                <li class="nav-item">
+
+                <li class="nav-item mb-3 user-panel">
                     <a href="/" class="nav-link {{ Request::is('/') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-home"></i>
                         <p>
@@ -36,6 +32,8 @@
                         </p>
                     </a>
                 </li>
+
+                <li class="nav-header elevation-1 pb-3">Menu Geografis</li>
                 <li class="nav-item">
                     <a href="/admin/dashboard" class="nav-link {{ Request::is('admin/dashboard*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -44,6 +42,7 @@
                         </p>
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a href="/admin/kabupaten" class="nav-link {{ Request::is('admin/kabupaten*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-building"></i>
@@ -52,6 +51,7 @@
                         </p>
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a href="/admin/kecamatan" class="nav-link {{ Request::is('admin/kecamatan*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-landmark"></i>
@@ -60,6 +60,7 @@
                         </p>
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <a href="/admin/desa" class="nav-link {{ Request::is('admin/desa*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-map-signs"></i>
@@ -68,7 +69,8 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item {{ Request::is('admin/potensi*') ? 'menu-open' : '' }}">
+
+                <li class="user-panel nav-item {{ Request::is('admin/potensi*') ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
@@ -107,6 +109,24 @@
                             </a>
                         </li>
                     </ul>
+                </li>
+
+                <li class="nav-header elevation-1 mt-2 pb-3">Menu User</li>
+                <li class="nav-item">
+                    <a href="/admin/profile" class="nav-link {{ Request::is('admin/profile*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Profile Desa
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/admin/artikel" class="nav-link {{ Request::is('admin/artikel*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-newspaper"></i>
+                        <p>
+                            Artikel Desa
+                        </p>
+                    </a>
                 </li>
             </ul>
         </nav>

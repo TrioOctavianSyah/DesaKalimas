@@ -1,8 +1,8 @@
 <?php
 
 # Instead of: use App\User;
-use App\Models\User;
 namespace App\Models;
+use App\Models\User;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
