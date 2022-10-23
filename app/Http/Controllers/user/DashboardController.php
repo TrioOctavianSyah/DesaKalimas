@@ -14,6 +14,7 @@ use App\Models\Pasar;
 class DashboardController extends Controller
 {
     public function home(){
+
         $artikel = Artikel::get();
         return view('user.home', compact('artikel'));
     }

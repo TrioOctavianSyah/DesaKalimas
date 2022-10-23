@@ -1,13 +1,13 @@
 @extends('adminlayout.layout')
 @section('title')
-    Manajemen Profile Desa
+    Manajemen Slider Desa
 @endsection
 @section('header_title')
-    <i class="nav-icon fas fa-users"></i> Manajemen Profile Desa
+    <i class="nav-icon fas fa-newspaper"></i> Manajemen Slider Desa
 @endsection
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="/admin/profile">Manajemen Profile Desa</a></li>
-    <li class="breadcrumb-item active"><a href="/admin/profile"></a>Index</li>
+    <li class="breadcrumb-item"><a href="/admin/slider">Manajemen Slider Desa</a></li>
+    <li class="breadcrumb-item active"><a href="/admin/slider"></a>Index</li>
 @endsection
 @section('add_css')
     <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
@@ -56,35 +56,34 @@
                             </div>
                         @endif
                         <div class="card-header">
-                            <h3 class="card-title">List Data Profile Desa</h3>
+                            <h3 class="card-title">List Data Slider</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <span><a href="/admin/profile/create" class="btn btn-success mb-4"><i class="fas fa-plus"></i>
-                                    Tambah Data Profile Desa</a></span>
+                            <span><a href="/admin/slider/create" class="btn btn-success mb-4"><i class="fas fa-plus"></i>
+                                    Tambah Data Slider</a></span>
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>No.</th>
-                                        <th>Nama Aparatur Desa</th>
-                                        <th>Poto Aparatur</th>
+                                        <th>Title</th>
+                                        <th>Description</th>
+                                        <th>Image</th>
                                         <th align="center">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($profile as $k)
+                                    @foreach ($slider as $k)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $k->nama_profile }}</td>
-                                            <td><img src="{{ asset('img/' . $k->poto_aparatur) }}" alt="gambar aparatur"
-                                                    style="width: 50%">
-                                            </td>
+                                            <td>{{ $k->title }}</td>
+                                            <td><img src="{{ asset('img/' . $k->image_slider) }}" style="width: 50%"
+                                                    alt="Gambar Slider"></td>
                                             <td width="20%" align="center">
                                                 <div class="d-flex align-items-center">
                                                     <a style="margin-right:7px" class="btn btn-info btn-sm"
-                                                        href="{{ route('profile.edit', $k->id) }}"><i
+                                                        href="{{ route('slider.edit', $k->id) }}"><i
                                                             class="fas fa-pencil-alt"></i> Edit</a>
-                                                    <form action="{{ route('profile.destroy', $k->id) }}" method="POST">
+                                                    <form action="{{ route('slider.destroy', $k->id) }}" method="POST">
                                                         @csrf
                                                         <input type="hidden" name="_method" value="DELETE">
                                                         <button class="btn btn-danger btn-sm"

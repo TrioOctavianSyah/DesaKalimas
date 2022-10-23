@@ -67,6 +67,7 @@
                                     <tr>
                                         <th>No.</th>
                                         <th>Nama Author</th>
+                                        <th>Gambar Artikel</th>
                                         <th align="center">Action</th>
                                     </tr>
                                 </thead>
@@ -74,7 +75,9 @@
                                     @foreach ($artikel as $k)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $k->nama_artikel }}</td>
+                                            <td>{{ $k->author }}</td>
+                                            <td><img src="{{ asset('img/' . $k->gambar_artikel) }}" style="width:50%"
+                                                    alt="Gambar Artikel"></td>
                                             <td width="20%" align="center">
                                                 <div class="d-flex align-items-center">
                                                     <a style="margin-right:7px" class="btn btn-info btn-sm"

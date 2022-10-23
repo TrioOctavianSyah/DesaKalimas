@@ -113,6 +113,14 @@
 
                 <li class="nav-header elevation-1 mt-2 pb-3">Menu User</li>
                 <li class="nav-item">
+                    <a href="/admin/slider" class="nav-link {{ Request::is('admin/slider*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-sliders-h"></i>
+                        <p>
+                            Home Slider
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="/admin/profile" class="nav-link {{ Request::is('admin/profile*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-users"></i>
                         <p>

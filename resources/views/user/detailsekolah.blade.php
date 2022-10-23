@@ -160,70 +160,70 @@
                                                 Tidak Ada Data
                                             </p>
                                         </a>
-                                    @endforelse
-                                </div>
+                                    @endempty
+                                @endforelse
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-md-9">
-                <div class="row point-info">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 align="center">{{ $sekolah->nama_sekolah }}</h4>
+        </div>
+        <div class="col-xs-12 col-md-9">
+            <div class="row point-info">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 align="center">{{ $sekolah->nama_sekolah }}</h4>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <div class="row point-info">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <img src="{{ asset('img/' . $sekolah->foto) }}" class="mb-3"
+                                                style="border:solid #000 3px;width:100%;" id="propic">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6">
+                                <div class="row point-info">
+                                    <div class="panel panel-default">
+                                        <div class="panel-body">
+                                            <div id="map"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <div class="row point-info">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">
-                                                <img src="{{ asset('img/' . $sekolah->foto) }}" class="mb-3"
-                                                    style="border:solid #000 3px;width:100%;" id="propic">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-6">
-                                    <div class="row point-info">
-                                        <div class="panel panel-default">
-                                            <div class="panel-body">
-                                                <div id="map"></div>
-                                            </div>
-                                        </div>
+                        <div class="col-xs-12">
+                            <div class="row point-info">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <p>
+                                            <strong>Keterangan</strong>
+                                            <br>
+                                            {{ $sekolah->keterangan }}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-12">
-                                <div class="row point-info">
-                                    <div class="panel panel-default">
-                                        <div class="panel-body">
-                                            <p>
-                                                <strong>Keterangan</strong>
-                                                <br>
-                                                {{ $sekolah->keterangan }}
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12">
-                                <div class="row point-info">
-                                    <div class="panel panel-default">
-                                        <div class="panel-body">
-                                            <address>
-                                                <strong>Alamat</strong>
-                                                <br>
-                                                {{ $sekolah->alamat }}
-                                            </address>
-                                            <address>
-                                                <strong>Telepon</strong>
-                                                <br>
-                                                {{ $sekolah->telepon }}
-                                            </address>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="row point-info">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
+                                        <address>
+                                            <strong>Alamat</strong>
+                                            <br>
+                                            {{ $sekolah->alamat }}
+                                        </address>
+                                        <address>
+                                            <strong>Telepon</strong>
+                                            <br>
+                                            {{ $sekolah->telepon }}
+                                        </address>
 
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -233,4 +233,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection

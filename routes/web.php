@@ -26,6 +26,13 @@ use App\Http\Controllers\admin\AuthController;
 
 Route::get('/', [DashboardController::class, 'dashboard']);
 Route::get('/', [DashboardController::class, 'home']);
+
+// Route::controller(App\Http\Controllers\admin\SliderController::class)->group(function(){
+//     Route::get('slider','index');
+//     Route::get('slider','create');
+//     Route::get('slider','store');
+
+// });
 Route::get('/profiledesa', [DashboardController::class, 'profiledesa']);
 Route::get('/pemerintahan', [DashboardController::class, 'pemerintahan']);
 Route::get('/peta', [DashboardController::class, 'peta']);
@@ -53,6 +60,7 @@ Route::prefix('admin')->group(function () {
         Route::resource('pasar', 'admin\PasarController');
     });
 
+    Route::resource('slider','admin\SliderController');
     Route::resource('profile', 'admin\ProfileController');
     Route::resource('artikel', 'admin\ArtikelController');
 
