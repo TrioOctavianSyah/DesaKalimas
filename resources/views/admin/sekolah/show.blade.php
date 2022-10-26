@@ -210,16 +210,19 @@
                             <div class="form-group form-group mt-3">
                                 <label for="kategori">Jenis Sekolah</label>
                                 <select class="form-control" id="jenis" rows="3" name="jenis_sekolah" disabled>
-                                    <option value="" {{ $sekolah->jenis == null ? 'selected' : '' }}>Pilih jenis sekolah
+                                    <option value="" {{ $sekolah->jenis == null ? 'selected' : '' }}>Pilih jenis
+                                        sekolah
                                     </option>
                                     <option value="PAUD" {{ $sekolah->jenis == 'PAUD' ? 'selected' : '' }}>PAUD</option>
                                     <option value="TK" {{ $sekolah->jenis == 'TK' ? 'selected' : '' }}>Taman Kanak-kanak
                                     </option>
                                     <option value="SD" {{ $sekolah->jenis == 'SD' ? 'selected' : '' }}>Sekolah Dasar
                                     </option>
-                                    <option value="SMP" {{ $sekolah->jenis == 'SMP' ? 'selected' : '' }}>Sekolah Menengah
+                                    <option value="SMP" {{ $sekolah->jenis == 'SMP' ? 'selected' : '' }}>Sekolah
+                                        Menengah
                                         Pertama</option>
-                                    <option value="SMA" {{ $sekolah->jenis == 'SMA' ? 'selected' : '' }}>Sekolah Menengah
+                                    <option value="SMA" {{ $sekolah->jenis == 'SMA' ? 'selected' : '' }}>Sekolah
+                                        Menengah
                                         Atas</option>
                                     <option value="Universitas" {{ $sekolah->jenis == 'Universitas' ? 'selected' : '' }}>
                                         Universitas</option>
@@ -230,6 +233,7 @@
                                     @enderror
                                 </small>
                             </div>
+
                             <div class="form-group">
                                 <label for="">Latitude</label>
                                 <input type="text" class="form-control" name="lat" id="lat" readonly

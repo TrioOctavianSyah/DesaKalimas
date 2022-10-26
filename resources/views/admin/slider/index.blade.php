@@ -3,7 +3,7 @@
     Manajemen Slider Desa
 @endsection
 @section('header_title')
-    <i class="nav-icon fas fa-newspaper"></i> Manajemen Slider Desa
+    <i class="nav-icon fas fa-sliders-h"></i> Manajemen Slider Desa
 @endsection
 @section('breadcrumb')
     <li class="breadcrumb-item"><a href="/admin/slider">Manajemen Slider Desa</a></li>

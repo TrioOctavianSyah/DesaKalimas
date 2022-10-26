@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_profile');
             $table->string('nip_aparatur');
+            $table->enum( 'status',['APARATUR_DESA', 'BPK', 'PKK', 'PUSKESDES', 'KARANG_TARUNA']);
             $table->text('jabatan_aparatur');
             $table->string('poto_aparatur');
             $table->timestamps();

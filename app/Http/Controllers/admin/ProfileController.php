@@ -60,6 +60,7 @@ class ProfileController extends Controller
         $validator = Validator::make($request->all(), [
             'nama_profile' => 'required|unique:tb_profile',
             'nip_aparatur' => 'required',
+            'status_jabatan'=> 'required',
             'jabatan_aparatur'=>'required',
             'gambar_aparatur'=>'required',
         ],$messages);
@@ -80,6 +81,7 @@ class ProfileController extends Controller
         }
         $profile->nama_profile = $request->nama_profile;
         $profile->nip_aparatur = $request->nip_aparatur;
+        $profile->status = $request->status_jabatan;
         $profile->jabatan_aparatur = $request->jabatan_aparatur;
         $profile->save();
         return redirect('admin/profile')->with('success', 'Data Profile Berhasil Ditambahkan');
@@ -139,6 +141,7 @@ class ProfileController extends Controller
         $validator = Validator::make($request->all(), [
             'nama_profile' => 'required',
             'nip_aparatur' => 'required',
+            'status_jabatan'=>'required',
             'jabatan_aparatur'=>'required',
             'gambar_aparatur'=>'required',
         ],$messages);
@@ -161,6 +164,7 @@ class ProfileController extends Controller
         }
         $profile->nama_profile = $request->nama_profile;
         $profile->nip_aparatur = $request->nip_aparatur;
+        $profile->status = $request->status_jabatan;
         $profile->jabatan_aparatur = $request->jabatan_aparatur;
         $profile->update();
         return redirect('admin/profile')->with('success', 'Data Profile Berhasil Diupdate');

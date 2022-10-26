@@ -111,7 +111,7 @@
                                     </small>
                                 </div>
                                 <span><button style="margin-right:4px" type="submit" class="btn btn-success float-left"><i
-                                            class="fas fa-save"></i> Tambah Slider </button></span>
+                                            class="fas fa-save"></i> Edit Slider </button></span>
                                 <a href="/admin/slider"><button type="button" class="btn btn-danger float-left mr-2"><i
                                             class="fas fa-times"></i> Kembali</button></a>
                             </form>

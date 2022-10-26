@@ -52,6 +52,33 @@
                                 <input type="text" class="form-control" name="nip_aparatur"
                                     placeholder="Masukkan NIP Aparatur" readonly value="{{ $profile->nip_aparatur }}">
                             </div>
+                            <div class="form-group form-group mt-3">
+                                <label for="kategori">Jenis Jabatan</label>
+                                <select class="form-control" id="status" rows="3" name="status_jabatan" disabled>
+                                    <option value="" {{ $profile->status == null ? 'selected' : '' }}>Pilih jenis
+                                        jabatan
+                                    </option>
+                                    <option value="APARATUR_DESA"
+                                        {{ $profile->status == 'APARATUR_DESA' ? 'selected' : '' }}>Aparatur Desa</option>
+                                    <option value="BPD" {{ $profile->status == 'BPD' ? 'selected' : '' }}>Badan
+                                        Permusyawaratan
+                                        Desa</option>
+                                    <option value="PKK" {{ $profile->status == 'PKK' ? 'selected' : '' }}>Pemberdayaan
+                                        Kesejahteraan
+                                        Keluarga</option>
+                                    <option value="PUSKESDES" {{ $profile->status == 'PUSKESDES' ? 'selected' : '' }}>
+                                        Pusat Kesehatan Desa
+                                    </option>
+                                    <option value="KARANG_TARUNA"
+                                        {{ $profile->status == 'KARANG_TARUNA' ? 'selected' : '' }}>Karang Taruna
+                                    </option>
+                                </select>
+                                <small style="color: red">
+                                    @error('status_jabatan')
+                                        {{ $message }}
+                                    @enderror
+                                </small>
+                            </div>
                             <div class="form-group">
                                 <label for="">Jabatan Aparatur</label>
                                 <input type="text" class="form-control" name="jabatan_aparatur"

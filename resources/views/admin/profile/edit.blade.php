@@ -85,6 +85,23 @@
                                         @enderror
                                     </small>
                                 </div>
+                                <div class="form-group form-group mt-3">
+                                    <label for="status">Jenis Jabatan</label>
+                                    <select class="form-control" id="status" rows="3" name="status_jabatan"
+                                        required>
+                                        <option value="">Pilih jenis jabatan</option>
+                                        <option value="APARATUR_DESA">Aparatur Desa</option>
+                                        <option value="BPD">Badan Permusyawaratan Desa</option>
+                                        <option value="PKK">Pemberdayaan Kesejahteraan Keluarga</option>
+                                        <option value="PUSKESDES">Pusat Kesehatan Desa</option>
+                                        <option value="KARANG_TARUNA">Karang Taruna</option>
+                                    </select>
+                                    <small style="color: red">
+                                        @error('status_jabatan')
+                                            {{ $message }}
+                                        @enderror
+                                    </small>
+                                </div>
                                 <div class="form-group">
                                     <label for="">Foto Aparatur</label>
                                     <div>
