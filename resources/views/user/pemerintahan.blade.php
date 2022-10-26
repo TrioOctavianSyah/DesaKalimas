@@ -23,7 +23,7 @@
                         </div>
                         <div class="side-B">
                             <div class="product-desc-side">
-                                <h3><a href="single-blog.html">Lorem ipsum</a></h3>
+                                <h3><a href="single-blog.html">Aparatur Desa</a></h3>
                                 <p>Lorem ipsum dolor sit amet, consec adipiscing elit. Nunc lorem nulla, ornare eu felis
                                     luctus non maximus vitae, portt neque. ipsum dolor sit amet, consec adipiscing elit.</p>
                                 <div class="links"><a href="single-blog.html">Read more</a></div>
@@ -42,7 +42,7 @@
                         </div>
                         <div class="side-B">
                             <div class="product-desc-side">
-                                <h3><a href="single-blog.html">Lorem ipsum</a></h3>
+                                <h3><a href="single-blog.html">BPD</a></h3>
                                 <p>Lorem ipsum dolor sit amet, consec adipiscing elit. Nunc lorem nulla, ornare eu felis
                                     luctus non maximus vitae, portt neque. ipsum dolor sit amet, consec adipiscing elit.</p>
                                 <div class="links"><a href="single-blog.html">Read more</a></div>
@@ -54,7 +54,7 @@
                     <div class="col-md-6 col-sm-12 col-xs-12 remove-padd-right">
                         <div class="side-A">
                             <div class="product-desc-side">
-                                <h3><a href="single-blog.html">Lorem ipsum</a></h3>
+                                <h3><a href="single-blog.html">PKK</a></h3>
                                 <p>Lorem ipsum dolor sit amet, consec adipiscing elit. Nunc lorem nulla, ornare eu felis
                                     luctus non maximus vitae, portt neque. ipsum dolor sit amet, consec adipiscing elit.</p>
                                 <div class="links"><a href="single-blog.html">Read more</a></div>
@@ -74,7 +74,7 @@
                     <div class="col-md-6 col-sm-12 col-xs-12 remove-padd-left">
                         <div class="side-A">
                             <div class="product-desc-side">
-                                <h3><a href="single-blog.html">Lorem ipsum</a></h3>
+                                <h3><a href="single-blog.html">Karang Taruna</a></h3>
                                 <p>Lorem ipsum dolor sit amet, consec adipiscing elit. Nunc lorem nulla, ornare eu felis
                                     luctus non maximus vitae, portt neque. ipsum dolor sit amet, consec adipiscing elit.</p>
                                 <div class="links"><a href="single-blog.html">Read more</a></div>

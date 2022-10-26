@@ -81,6 +81,8 @@
                                             </td>
                                             <td width="20%" align="center">
                                                 <div class="d-flex align-items-center">
+                                                    <a style="margin-right:7px" href="{{ route('profile.show', $k->id) }}"
+                                                        class="btn btn-primary btn-sm"><i class="fas fa-eye"></i> Detail</a>
                                                     <a style="margin-right:7px" class="btn btn-info btn-sm"
                                                         href="{{ route('profile.edit', $k->id) }}"><i
                                                             class="fas fa-pencil-alt"></i> Edit</a>

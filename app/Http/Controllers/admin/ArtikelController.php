@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use App\Models\Artikel;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -91,9 +92,16 @@ class ArtikelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Request $request)
     {
-        //
+        if(!$request->session()->has('admin')){
+            return redirect('/login')->with('expired','Session Telah Berakhir');
+        }else{
+            $user = $request->session()->get('admin.data');
+            $profiledata = Admin::where('username','=', $user["username"])->first();
+            $artikel = Artikel::find($id);
+            return view('admin.artikel.show', compact('artikel','profiledata'));
+        }
     }
 
     /**

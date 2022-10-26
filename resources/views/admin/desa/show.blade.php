@@ -53,6 +53,7 @@
         });
     </script>
 @endsection
+
 @section('content')
     <section class="content">
         <div class="container-fluid">

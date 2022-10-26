@@ -4,6 +4,7 @@ namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Artikel;
 use App\Models\Profile;
 use App\Models\Desa;
@@ -15,7 +16,8 @@ class DashboardController extends Controller
 {
     public function home(){
 
-        $artikel = Artikel::get();
+        $artikel = DB::table('tb_artikel')->get();
+        // $list = Artikel::where('id_artikel',$cek->id)->get();
         return view('user.home', compact('artikel'));
     }
 

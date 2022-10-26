@@ -91,9 +91,16 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Request $request)
     {
-        //
+        if(!$request->session()->has('admin')){
+            return redirect('/login')->with('expired','Session Telah Berakhir');
+        }else{
+            $user = $request->session()->get('admin.data');
+            $profiledata = Admin::where('username','=', $user["username"])->first();
+            $profile = Profile::find($id);
+            return view('admin.profile.show', compact('profile','profiledata'));
+        }
     }
 
     /**

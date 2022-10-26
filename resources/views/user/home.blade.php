@@ -299,67 +299,32 @@
             <div class="product-desc-side">
                 <h3><a id="berita-desa" href=""></a>Berita Desa</h3>
             </div>
+
             <div class="container">
-                <div class="row offspace-45">
-                    <div class="view-set-block">
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="event-blog-image">
-                                <img alt="image" class="img-responsive"
-                                    src="img/poto-kalimas/rumah ibadah/vihara.jpeg">
+
+                @forelse ($artikel as $artikel)
+                    <div class="row offspace-45">
+                        <div class="view-set-block">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="event-blog-image">
+                                    <img alt="image" class="img-responsive" src="img/{{ $artikel->gambar_artikel }}">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12 side-in-image">
-                            <div class="event-blog-details">
-                                <h4><a href="single-blog.html">Lorem ipsum dolor sit amet</a></h4>
-                                <h5>Post By Admin <a><i aria-hidden="true" class="fa fa-heart-o fa-lg"></i>Likes</a><a><i
-                                            aria-hidden="true" class="fa fa-comment-o fa-lg"></i>comments</a></h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lorem nulla, ornare eu
-                                    felis
-                                    quis, efficitur posuere nulla. Aliquam ac luctus turpis, non faucibus sem. Fusce ornare
-                                    turpis neque, eu commodo sapien porta sed. Nam ut ante turpis. Nam arcu odio,
-                                    scelerisque a
-                                    vehicula vitae, auctor sit amet lectus. </p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lorem nulla, ornare eu
-                                    felis
-                                    quis, efficitur posuere nulla. Aliquam ac luctus turpis, non faucibus sem. Fusce ornard
-                                    hendrerit tortor vulputate id. Vestibulum mauris nibh, luctus non maximus vitae,
-                                    porttitor
-                                    eget neque. Donec tristique nunc facilisis, dapibus libero ac</p>
-                                <a class="btn btn-default" href="single-blog.html">Read More</a>
+                            <div class="col-md-6 col-sm-6 col-xs-12 side-in-image">
+                                <div class="event-blog-details">
+                                    <h4><a href="#berita-desa">{{ $artikel->nama_artikel }}</a></h4>
+                                    <h5>Post By {{ $artikel->author }}</h5>
+                                    <p>{{ $artikel->isi_artikel }}</p>
+                                    <a class="btn btn-default" href="#">Read More</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row offspace-45">
-                    <div class="view-set-block">
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="event-blog-image">
-                                <img alt="image" class="img-responsive"
-                                    src="img/poto-kalimas/rumah ibadah/proses pembangunan masjid.jpeg">
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-12 side-in-image">
-                            <div class="event-blog-details">
-                                <h4><a href="single-blog.html">Lorem ipsum dolor sit amet</a></h4>
-                                <h5>Post By Admin <a><i aria-hidden="true" class="fa fa-heart-o fa-lg"></i>Likes</a><a><i
-                                            aria-hidden="true" class="fa fa-comment-o fa-lg"></i>comments</a></h5>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lorem nulla, ornare eu
-                                    felis
-                                    quis, efficitur posuere nulla. Aliquam ac luctus turpis, non faucibus sem. Fusce ornare
-                                    turpis neque, eu commodo sapien porta sed. Nam ut ante turpis. Nam arcu odio,
-                                    scelerisque a
-                                    vehicula vitae, auctor sit amet lectus. </p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lorem nulla, ornare eu
-                                    felis
-                                    quis, efficitur posuere nulla. Aliquam ac luctus turpis, non faucibus sem. Fusce ornard
-                                    hendrerit tortor vulputate id. Vestibulum mauris nibh, luctus non maximus vitae,
-                                    porttitor
-                                    eget neque. Donec tristique nunc facilisis, dapibus libero ac</p>
-                                <a class="btn btn-default" href="single-blog.html">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @empty
+                    <h2>Halaman Kosong</h2>
+                @endforelse
+
+
             </div>
         </section>
     </div>

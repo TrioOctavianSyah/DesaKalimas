@@ -67,8 +67,15 @@ class SliderController extends Controller
         return redirect('admin/slider')->with('success', 'Data Slider Berhasil Ditambahkan');
 
     }
-    public function show ($id){
-        //
+    public function show ($id, Request $request){
+        if(!$request->session()->has('admin')){
+            return redirect('/login')->with('expired','Session Telah Berakhir');
+        }else{
+            $user = $request->session()->get('admin.data');
+            $profiledata = Admin::where('username','=', $user["username"])->first();
+            $slider = Slider::find($id);
+            return view('admin.slider.show', compact('slider','profiledata'));
+        }
     }
 
      public function edit($id, Request $request)
@@ -127,25 +134,3 @@ class SliderController extends Controller
     }
 
 }
-
-
-    // $validatedData = $request->validatedd();
-    // if($request->hashFile('image')){
-    //     $file = $request->file('image');
-    //     $ext =$file->getClientOriginalExtension();
-    //     $filename =time().'.'.$ext;
-    //     $file->move('uploads/slider',$filename);
-    //     $validatedData['image'] ="uploads/slider $filename";
-    // }
-    // $validatedData['status'] = $request->status == true ? '1':'0';
-
-    // Slider::create([
-    //     'title'=>$validatedData['title'],
-    //     'description'=>$validatedData['description'],
-    //     'image'=>$validatedData['image'],
-    //     'status'=>$validatedData['status'],
-    // ]);
-
-    // return redirect ('admin/slider')->with('message','Slider Berhasil Ditambahkan');
-    // }
-
