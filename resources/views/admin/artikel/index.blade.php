@@ -68,6 +68,9 @@
                                         <th>No.</th>
                                         <th>Nama Author</th>
                                         <th>Gambar Artikel</th>
+                                        <th>Judul Artikel</th>
+                                        <th>Isi Artikel</th>
+                                        <th>Tanggal Artikel</th>
                                         <th align="center">Action</th>
                                     </tr>
                                 </thead>
@@ -77,7 +80,10 @@
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $k->author }}</td>
                                             <td><img src="{{ asset('img/' . $k->gambar_artikel) }}" style="width:50%"
-                                                    alt="Gambar Artikel"></td>
+                                                alt="Gambar Artikel"></td>
+                                                <td>{{ $k->nama_artikel }}</td>
+                                                <td>{{ Str::limit($k->isi_artikel, 50) }}</td>
+                                                <td> {{ date('d-m-Y', strtotime($k->created_at))}}</td>
                                             <td width="20%" align="center">
                                                 <div class="d-flex align-items-center">
                                                     <a style="margin-right:7px" href="{{ route('artikel.show', $k->id) }}"

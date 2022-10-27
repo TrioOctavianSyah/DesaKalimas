@@ -28,18 +28,9 @@
                             dolore magna aliqua. Ut enim ad minim veniam, Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit, sed do </p>
 
-                        <div class="clearfix"></div>
-                        <div class="single-bottom comment-form">
-                            <h3>Leave your Comment</h3>
-                            <form action="#" method="post">
-                                <input type="text" class="form-control" name="Name" placeholder="Name" required="">
-                                <input type="email" class="form-control" name="Email" placeholder="Email"
-                                    required="">
-                                <textarea class="form-control" name="Message" placeholder="Message Here...." required=""></textarea>
-                                <input type="submit" class="submit-btn" value="Send">
-                            </form>
-                        </div>
+
                     </div>
+
                     <aside class="col-md-3 col-sm-4 col-xs-12">
                         <div class="blog-list">
                             <h4>Categories</h4>

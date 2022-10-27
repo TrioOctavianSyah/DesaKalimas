@@ -76,12 +76,24 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Isi Artikel</label>
-                                    <textarea placeholder="Masukan Artikel" name="isi_artikel" cols="30" rows="4" class="form-control" required>{{ $errors->any() ? old('isi_artikel') : '' }}</textarea>
+                                    <textarea placeholder="Masukan Artikel" name="isi_artikel" cols="30" rows="4" class="form-control" required>{{ $artikel->isi_artikel}}</textarea>
                                     <small style="color: red">
                                         @error('isi_artikel')
                                             {{ $message }}
                                         @enderror
                                     </small>
+                                </div>
+                                <div class="form-group">
+                                    <div class="md:flex md:items-center mb-6">
+                                        <div class="md:w-1/3">
+                                        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-full-name">
+                                            Date
+                                        </label>
+                                        </div>
+                                        <div class="md:w-2/3">
+                                        <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" name="created_at" type="datetime-local" value="">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="">Foto Artikel</label>
@@ -105,8 +117,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="">Author</label>
-                                    <input type="text" class="form-control" name="author" placeholder="Author" required
-                                        value="{{ $errors->any() ? old('author') : '' }}">
+                                    <input type="text" class="form-control" name="author" placeholder="Author" required value="{{ $artikel->author }}">
                                     <small style="color: red">
                                         @error('author')
                                             {{ $message }}
