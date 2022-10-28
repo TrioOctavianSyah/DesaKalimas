@@ -313,7 +313,8 @@
                             <div class="col-md-6 col-sm-6 col-xs-12 side-in-image">
                                 <div class="event-blog-details">
                                     <h4><a href="#berita-desa">{{ $artikel->nama_artikel }}</a></h4>
-                                    <h5>Author : {{ $artikel->author }} &nbsp; &nbsp; {{ date('d-m-Y', strtotime($artikel->created_at)); }}</h5>
+                                    <h5>Author : {{ $artikel->author }} &nbsp; &nbsp;
+                                        {{ date('d-m-Y', strtotime($artikel->created_at)) }}</h5>
                                     <p>{{ $artikel->isi_artikel }}</p>
                                     <a class="btn btn-default" href="#">Read More</a>
                                 </div>
@@ -321,7 +322,7 @@
                         </div>
                     </div>
                 @empty
-                    <h2>Halaman Kosong</h2>
+                    <h2>Proses Maintanance</h2>
                 @endforelse
 
 

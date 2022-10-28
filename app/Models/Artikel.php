@@ -9,4 +9,8 @@ class Artikel extends Model
 {
     use HasFactory;
     protected $table = 'tb_artikel';
+
+    public function profile (){
+        return $this->belongsTo(Profile::class,'id');
+    }
 }

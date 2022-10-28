@@ -1,16 +1,20 @@
 Rancangan Database User :
 
-1. Profile = Struktur Organisasi
+1. Profile = Struktur Organisasi (Pemerintahan Page)
 nama aparat desa
 NIP aparat desa
 jabatan aparat desa
 poto aparat desa
 
-2. Berita = Artikel desa
+2. Berita = Artikel desa (id = #BERITA_DESA)
 image/video
 author
 title
 content
+
+3. Transparansi = profile desa (PAGE)
+
+
 
 php artisan migrate:rollback --path=/database/migrations/fileName.php
 
