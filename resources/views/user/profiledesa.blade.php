@@ -201,8 +201,8 @@
                                         <p class="user-info">Pendapatan</p>
                                         <div class="progress">
                                             <div class="progress-bar progress-bar-warning progress-bar-striped"
-                                                role="progressbar" aria-valuenow="60" aria-valuemin="0"
-                                                aria-valuemax="100" style="width: 60%">
+                                                role="progressbar" aria-valuenow="100" aria-valuemin="100"
+                                                aria-valuemax="100" style="width: 80%">
                                                 <span class="sr-only">60% Complete (warning)</span>
                                             </div>
                                         </div>

@@ -1,5 +1,34 @@
 @extends('userlayout.layout')
 
+@section('add_css')
+    <style>
+        #more {
+            display: none;
+        }
+    </style>
+@endsection
+
+@section('add_js')
+    <script>
+        function myFunction() {
+            var dots = document.getElementById("dots");
+            var moreText = document.getElementById("more");
+            var btnText = document.getElementById("myBtn");
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Back";
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = "Baca Selengkapnya";
+                moreText.style.display = "inline";
+            }
+        }
+    </script>
+    </script>
+@endsection
+
 @section('content')
     <div id="page">
         <div id="myCarousel1" class="carousel slide" data-ride="carousel">
@@ -315,8 +344,9 @@
                                     <h4><a href="#berita-desa">{{ $artikel->nama_artikel }}</a></h4>
                                     <h5>Author : {{ $artikel->author }} &nbsp; &nbsp;
                                         {{ date('d-m-Y', strtotime($artikel->created_at)) }}</h5>
-                                    <p>{{ $artikel->isi_artikel }}</p>
-                                    <a class="btn btn-default" href="#">Read More</a>
+                                    <p><a>Berita Desa</a></p>
+                                    <p> <span id="dots">{{ $artikel->isi_artikel }}</span></p>
+                                    <a onclick="myFunction()" id="myBtn" class="btn btn-default">Back</a>
                                 </div>
                             </div>
                         </div>

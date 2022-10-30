@@ -16,7 +16,7 @@
     @yield('add_css')
     <link href="{{ asset('assets/p/ext/customScroll/css/jquery.mCustomScrollbar.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/p/css/style.default.css') }}" rel="stylesheet" />
-
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
     <link href="{{ asset('temp/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('temp/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css" />
@@ -116,6 +116,7 @@
     <script src="https://unpkg.com/@geoman-io/leaflet-geoman-free@latest/dist/leaflet-geoman.min.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     @yield('add_js')
+    @yield('add_css')
 </body>
 
 </html>
